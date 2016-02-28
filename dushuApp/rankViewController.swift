@@ -1,0 +1,47 @@
+//
+//  rankViewController.swift
+//  dushuApp
+//
+//  Created by LGZwr on 16/2/27.
+//  Copyright © 2016年 maizi. All rights reserved.
+//
+
+import UIKit
+
+class rankViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        let label = UILabel(frame: CGRectMake(0,0,100,20))
+        label.center = self.view.center
+        label.textAlignment = NSTextAlignment.Center
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: MY_FONT, size: 14)
+        label.text = "哈哈，我是CommandZ!!!!!"
+        label.textColor = UIColor.blueColor()
+        self.view.addSubview(label)
+        
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
