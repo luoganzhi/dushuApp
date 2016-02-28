@@ -117,83 +117,91 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
             cell.accessoryType = .DisclosureIndicator
         }
         
-        cell.textLabel?.text = titleArray[indexPath.row]
+        cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MY_FONT, size: 14)
         
         
-//        switch indexPath.row{
-//        case 0:
-//            cell.detailTextLabel?.text = Book_Title
-//            break
-//        case 1:
-//            break
-//        case 2:
-//            break
-//        case 3:
-//            break
-//        default:
-//            break
-//        }
-        
-        //设置点击事件
-        func tableView(tableView: UITableView, didSelectRowAtIndexPath: NSIndexPath){
-            self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)
-            switch indexPath.row{
-                        case 0:
-                            tableViewSelectTitle()
-                            break
-                        case 1:
-                            tableViewSelectScore()
-                            break
-                        case 2:
-                            tableViewSelectType()
-                            break
-                        case 3:
-                            tableViewSelectDescription()
-                            break
-                        default:
-                            break
-                        }
-
+        switch indexPath.row{
+        case 0:
+            cell.detailTextLabel?.text = Book_Title
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
         }
-        
-        //点击标题
-        func tableViewSelectTitle(){
-            let vc = Push_TitleController()
-            GeneralFactory.addTitleWithTitle(vc)
-            self.presentViewController(vc, animated: true) { () -> Void in
-                
-            }
-        
-        }
-        
-        //点击评分
-        func tableViewSelectScore(){
-        
-        }
-        //点击分类
-        func tableViewSelectType(){
-            let vc = Push_TypeController()
-            GeneralFactory.addTitleWithTitle(vc)
-            self.presentViewController(vc, animated: true) { () -> Void in
-                
-            }
-        
-        }
-        //点击书评
-        func tableViewSelectDescription(){
-            let vc = Push_DescriptionController()
-            GeneralFactory.addTitleWithTitle(vc)
-            self.presentViewController(vc, animated: true) { () -> Void in
-                
-            }
-        
-        }
-        
         
         return cell
     }
+    //设置点击事件
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        //为了优化二级目录返回为非选中状态,添加这条语句
+        self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        switch indexPath.row{
+        case 0:
+            tableViewSelectTitle()
+//            print("1")
+            break
+        case 1:
+            tableViewSelectScore()
+            break
+        case 2:
+            tableViewSelectType()
+            break
+        case 3:
+            tableViewSelectDescription()
+            break
+        default:
+            break
+        }
+        
+    }
     
+    //点击标题
+    func tableViewSelectTitle(){
+        let vc = Push_TitleController()
+        GeneralFactory.addTitleWithTitle(vc)
+//        print("here")
+        vc.callBack = ({(Title:String) -> Void in
+            self.Book_Title = Title
+            self.tableView?.reloadData()
+        
+        })
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+        }
+        
+    }
+    
+    //点击评分
+    func tableViewSelectScore(){
+        
+    }
+    //点击分类
+    func tableViewSelectType(){
+        let vc = Push_TypeController()
+        GeneralFactory.addTitleWithTitle(vc)
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+        }
+        
+    }
+    //点击书评
+    func tableViewSelectDescription(){
+        let vc = Push_DescriptionController()
+        GeneralFactory.addTitleWithTitle(vc)
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+        }
+        
+    }
+
     
     
 }
