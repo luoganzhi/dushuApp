@@ -18,7 +18,12 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     //是否显示星星
     var showScore = false
     
+    //定义用与接收type的变量
+    var type = "文学"
+    var detailType = "文学"
     
+    //定义一个接收description的变量
+    var Book_Description = ""
     
 
     override func viewDidLoad() {
@@ -139,14 +144,29 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MY_FONT, size: 14)
         
+        var row = indexPath.row
         
-        switch indexPath.row{
+        if self.showScore && row > 1{
+            row--
+        }
+        
+        switch row{
         case 0:
             cell.detailTextLabel?.text = Book_Title
             break
+        case 2:
+            cell.detailTextLabel?.text = self.type + "->" + self.detailType
+        case 4:
+            cell.accessoryType = .None
+            let commntView = UITextView(frame: CGRect(x: 4, y: 4, width: SCREEN_WIDTH - 8,height: 80))
+            commntView.text = self.Book_Description
+            commntView.font = UIFont(name: MY_FONT, size: 14)
+            cell.contentView.addSubview(commntView)
         default:
             break
         }
+        
+        
         
         //判断是否添加小星星
         if showScore && indexPath.row == 2{
@@ -155,6 +175,17 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if showScore && indexPath.row > 5 {
+            return 88
+        }else if !showScore && indexPath.row > 4 {
+            return 88
+        }else{
+            return 44
+        }
+    }
+    
     //设置点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         //点击评分跳出原来分类的界面bug修改
@@ -232,6 +263,18 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         let but2 = vc.view.viewWithTag(1235) as? UIButton
         but1?.setTitleColor(RGB1(38, g: 82, b: 67), forState: .Normal)
         but2?.setTitleColor(RGB(38, g: 82, b: 67), forState: .Normal)
+        
+        //vc.type = self.type
+        //vc.detailType = self.detailType
+        
+        vc.callBack = ({(type: String,detailType: String ) -> Void in
+            
+            
+            self.type = type
+            self.detailType = detailType
+            self.tableView?.reloadData()
+        })
+        
         self.presentViewController(vc, animated: true) { () -> Void in
             
         }
@@ -241,6 +284,21 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     func tableViewSelectDescription(){
         let vc = Push_DescriptionController()
         GeneralFactory.addTitleWithTitle(vc)
+        vc.textView?.text = self.Book_Description
+        
+        vc.callBakc = ({(description) -> Void in
+            self.Book_Description = description
+            if self.titleArray.last == ""{
+                self.titleArray.removeLast()
+            }
+            
+            if description != ""{
+                self.titleArray.append("")
+            }
+            
+            self.tableView?.reloadData()
+        })
+        
         self.presentViewController(vc, animated: true) { () -> Void in
             
         }
