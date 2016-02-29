@@ -161,6 +161,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
             let commntView = UITextView(frame: CGRect(x: 4, y: 4, width: SCREEN_WIDTH - 8,height: 80))
             commntView.text = self.Book_Description
             commntView.font = UIFont(name: MY_FONT, size: 14)
+            commntView.editable = false //不允许用户编辑该tableView
             cell.contentView.addSubview(commntView)
         default:
             break
