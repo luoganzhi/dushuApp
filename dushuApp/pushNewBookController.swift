@@ -228,6 +228,10 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     func tableViewSelectType(){
         let vc = Push_TypeController()
         GeneralFactory.addTitleWithTitle(vc)
+        let but1 = vc.view.viewWithTag(1234) as? UIButton
+        let but2 = vc.view.viewWithTag(1235) as? UIButton
+        but1?.setTitleColor(RGB1(38, g: 82, b: 67), forState: .Normal)
+        but2?.setTitleColor(RGB(38, g: 82, b: 67), forState: .Normal)
         self.presentViewController(vc, animated: true) { () -> Void in
             
         }

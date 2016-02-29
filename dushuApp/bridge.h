@@ -5,3 +5,5 @@
 #import "VPImageCropperViewController.h"
 
 #import "LDXScore.h"
+
+#import "AKSegmentedControl.h"

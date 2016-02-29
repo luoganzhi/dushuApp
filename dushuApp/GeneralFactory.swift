@@ -18,6 +18,7 @@ class GeneralFactory: NSObject {
         but1.setTitleColor(MAIN_RED, forState: .Normal)
         but1.contentHorizontalAlignment = .Left
         but1.titleLabel?.font = UIFont(name: MY_FONT, size: 14)
+        but1.tag = 1234
         target.view.addSubview(but1)
         
         let but2 = UIButton(frame: CGRectMake(SCREEN_WIDTH - 50,20,40,20))
@@ -25,6 +26,7 @@ class GeneralFactory: NSObject {
         but2.setTitleColor(MAIN_RED, forState: .Normal)
         but2.contentHorizontalAlignment = .Right
         but2.titleLabel?.font = UIFont(name: MY_FONT, size: 14)
+        but2.tag = 1235
         target.view.addSubview(but2)
         
         but1.addTarget(target, action: Selector("close"), forControlEvents: .TouchUpInside)
