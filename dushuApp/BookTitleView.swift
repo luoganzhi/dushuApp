@@ -24,7 +24,7 @@ class BookTitleView: UIView {
     
     var BookEditor : JVFloatLabeledTextField?
     
-    var delegate : BookTitleDelegate?
+    weak var delegate : BookTitleDelegate? //申明协议弱引用,不然内存泄露
     
     override init(frame : CGRect){
         

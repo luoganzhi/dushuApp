@@ -14,7 +14,9 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     var tableView : UITableView?
     var titleArray : Array<String> = []
     var Book_Title = ""
-   
+    var score : LDXScore?
+    //是否显示星星
+    var showScore = false
     
     
     
@@ -30,7 +32,8 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         
         self.tableView = UITableView(frame: CGRect(x: 0, y: 40 + 160 , width: SCREEN_WIDTH, height: SCREEN_HIGHT - 200), style: .Grouped)
         //使没有内容的cell不产生线
-        self.tableView?.tableFooterView = UIView()
+        self.tableView?.separatorStyle = .None
+        //self.tableView?.tableFooterView = UIView()
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.tableView?.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
@@ -41,12 +44,28 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         self.titleArray = ["标题","评分","分类","书评"]
         
         
+        //对评分初始化
+        self.score = LDXScore(frame: CGRect(x: 100, y: 10, width: 100, height: 22))
+        self.score?.isSelect = true
+        self.score?.normalImg = UIImage(named: "btn_star_evaluation_normal")
+        self.score?.highlightImg = UIImage(named: "btn_star_evaluation_press")
+        self.score?.max_star = 5
+        self.score?.show_score = 5
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //检查是否内存泄露
+    /*deinit
+    {
+        print("没有发生内存泄露")
+        
+    }*/
+    
     
     /**BookTitleDelegate*/
     //代理
@@ -125,25 +144,30 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         case 0:
             cell.detailTextLabel?.text = Book_Title
             break
-        case 1:
-            break
-        case 2:
-            break
-        case 3:
-            break
         default:
             break
+        }
+        
+        //判断是否添加小星星
+        if showScore && indexPath.row == 2{
+            cell.contentView.addSubview(score!)
         }
         
         return cell
     }
     //设置点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        //点击评分跳出原来分类的界面bug修改
+        var row = indexPath.row
+        if row > 1 && showScore{
+            row -= 1
+        }
+        
         //为了优化二级目录返回为非选中状态,添加这条语句
         self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)
         
         
-        switch indexPath.row{
+        switch row{
         case 0:
             tableViewSelectTitle()
 //            print("1")
@@ -181,6 +205,23 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     
     //点击评分
     func tableViewSelectScore(){
+        self.tableView?.beginUpdates()
+        
+        
+        let tempIndexPath = [NSIndexPath(forRow: 2, inSection: 0)]
+        
+        if self.showScore == true{
+            self.titleArray.removeAtIndex(2)
+            self.tableView?.deleteRowsAtIndexPaths(tempIndexPath, withRowAnimation: .Right)
+            self.showScore = false
+        
+        }else{
+            self.tableView?.insertRowsAtIndexPaths(tempIndexPath, withRowAnimation: .Left)
+            self.showScore = true
+        
+            self.titleArray.insert("", atIndex: 2)
+        }
+        self.tableView?.endUpdates()
         
     }
     //点击分类
