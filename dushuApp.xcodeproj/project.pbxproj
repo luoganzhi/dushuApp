@@ -68,6 +68,8 @@
 		18E7331D1C840117007E204F /* social-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E7330C1C840117007E204F /* social-icon@2x.png */; };
 		18E7331E1C840117007E204F /* star-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E7330D1C840117007E204F /* star-icon.png */; };
 		18E7331F1C840117007E204F /* star-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E7330E1C840117007E204F /* star-icon@2x.png */; };
+		18E733251C84159E007E204F /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E733221C84159E007E204F /* IGLDropDownItem.m */; };
+		18E733261C84159E007E204F /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E733241C84159E007E204F /* IGLDropDownMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,10 @@
 		18E7330C1C840117007E204F /* social-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-icon@2x.png"; sourceTree = "<group>"; };
 		18E7330D1C840117007E204F /* star-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon.png"; sourceTree = "<group>"; };
 		18E7330E1C840117007E204F /* star-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon@2x.png"; sourceTree = "<group>"; };
+		18E733211C84159E007E204F /* IGLDropDownItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLDropDownItem.h; sourceTree = "<group>"; };
+		18E733221C84159E007E204F /* IGLDropDownItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownItem.m; sourceTree = "<group>"; };
+		18E733231C84159E007E204F /* IGLDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLDropDownMenu.h; sourceTree = "<group>"; };
+		18E733241C84159E007E204F /* IGLDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +419,7 @@
 		18A250D61C81CD0800DFC2F6 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				18E733201C84159E007E204F /* IGLDropDownMenu */,
 				18E732FB1C840117007E204F /* AKSegmentedControl */,
 				18E732F31C83D658007E204F /* LDXScore */,
 				18448D541C82D5AA004BD5A0 /* VPImageCropperViewController */,
@@ -496,6 +503,17 @@
 				18E7330E1C840117007E204F /* star-icon@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		18E733201C84159E007E204F /* IGLDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				18E733211C84159E007E204F /* IGLDropDownItem.h */,
+				18E733221C84159E007E204F /* IGLDropDownItem.m */,
+				18E733231C84159E007E204F /* IGLDropDownMenu.h */,
+				18E733241C84159E007E204F /* IGLDropDownMenu.m */,
+			);
+			path = IGLDropDownMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,9 +684,11 @@
 				18A250DE1C81CDBA00DFC2F6 /* JVFloatLabeledTextField.m in Sources */,
 				18A250D51C81CC9C00DFC2F6 /* BookTitleView.swift in Sources */,
 				18A24FE41C8186F000DFC2F6 /* pushViewController.swift in Sources */,
+				18E733261C84159E007E204F /* IGLDropDownMenu.m in Sources */,
 				18448D571C82D5AA004BD5A0 /* VPImageCropperViewController.m in Sources */,
 				1837CA461C82F26B000C68F6 /* Push_DescriptionController.swift in Sources */,
 				18A250E01C81CDBA00DFC2F6 /* NSString+TextDirectionality.m in Sources */,
+				18E733251C84159E007E204F /* IGLDropDownItem.m in Sources */,
 				18A24FE81C81870600DFC2F6 /* moreViewController.swift in Sources */,
 				18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */,
 				1837CA441C82F22B000C68F6 /* Push_TypeController.swift in Sources */,
