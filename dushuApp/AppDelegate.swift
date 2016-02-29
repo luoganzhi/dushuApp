@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        //设置leanCloud
+        AVOSCloud.setApplicationId("1hyjRmJ1sFx8WxvKQkAHcxnG-gzGzoHsz", clientKey: "T0JnGAqSLgzRfUFFgUvxebLk")
+        
         self.window = UIWindow(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HIGHT))
             
         let tarbarController = UITabBarController()

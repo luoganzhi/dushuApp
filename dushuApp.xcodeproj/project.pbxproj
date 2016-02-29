@@ -12,6 +12,9 @@
 		1837CA461C82F26B000C68F6 /* Push_DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837CA451C82F26B000C68F6 /* Push_DescriptionController.swift */; };
 		18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18448D521C82BCF7004BD5A0 /* PhotoPickerViewController.swift */; };
 		18448D571C82D5AA004BD5A0 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18448D561C82D5AA004BD5A0 /* VPImageCropperViewController.m */; };
+		1879D04B1C848D6D0034C30D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1879D04A1C848D6D0034C30D /* Login.storyboard */; };
+		1879D04D1C8495280034C30D /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D04C1C8495280034C30D /* loginViewController.swift */; };
+		1879D04F1C8495390034C30D /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D04E1C8495390034C30D /* registerViewController.swift */; };
 		188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F8DE41C84567A00ECC222 /* XKeyBoard.m */; };
 		18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24F9A1C81813000DFC2F6 /* AppDelegate.swift */; };
 		18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A24FA11C81813000DFC2F6 /* Assets.xcassets */; };
@@ -97,6 +100,9 @@
 		18448D521C82BCF7004BD5A0 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		18448D551C82D5AA004BD5A0 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		18448D561C82D5AA004BD5A0 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		1879D04A1C848D6D0034C30D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1879D04C1C8495280034C30D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		1879D04E1C8495390034C30D /* registerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		188F8DE31C84567A00ECC222 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		188F8DE41C84567A00ECC222 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		18A24F971C81813000DFC2F6 /* dushuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dushuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +218,16 @@
 			path = VPImageCropperViewController;
 			sourceTree = "<group>";
 		};
+		1879D0491C848D530034C30D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1879D04A1C848D6D0034C30D /* Login.storyboard */,
+				1879D04C1C8495280034C30D /* loginViewController.swift */,
+				1879D04E1C8495390034C30D /* registerViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		188F8DE21C84567A00ECC222 /* XKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +262,7 @@
 		18A24F991C81813000DFC2F6 /* dushuApp */ = {
 			isa = PBXGroup;
 			children = (
+				1879D0491C848D530034C30D /* Login */,
 				18A250D11C81B54900DFC2F6 /* Factory */,
 				18A250CB1C81B39300DFC2F6 /* pushNewBook */,
 				18A24FDC1C81861B00DFC2F6 /* More */,
@@ -656,6 +673,7 @@
 				18E733131C840117007E204F /* segmented-bg-pressed-left@2x.png in Resources */,
 				18E733191C840117007E204F /* segmented-separator@2x.png in Resources */,
 				18E733101C840117007E204F /* segmented-bg-pressed-center.png in Resources */,
+				1879D04B1C848D6D0034C30D /* Login.storyboard in Resources */,
 				18E7331A1C840117007E204F /* settings-icon.png in Resources */,
 				18E7331B1C840117007E204F /* settings-icon@2x.png in Resources */,
 				18A250C41C81981C00DFC2F6 /* 隶变体.ttf in Resources */,
@@ -704,6 +722,7 @@
 				18E733251C84159E007E204F /* IGLDropDownItem.m in Sources */,
 				188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */,
 				18A24FE81C81870600DFC2F6 /* moreViewController.swift in Sources */,
+				1879D04F1C8495390034C30D /* registerViewController.swift in Sources */,
 				18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */,
 				1837CA441C82F22B000C68F6 /* Push_TypeController.swift in Sources */,
 				18A250DF1C81CDBA00DFC2F6 /* JVFloatLabeledTextView.m in Sources */,
@@ -711,6 +730,7 @@
 				18A24FE01C8186D400DFC2F6 /* rankViewController.swift in Sources */,
 				18A24FE21C8186E500DFC2F6 /* searchViewController.swift in Sources */,
 				18A24FE61C8186FA00DFC2F6 /* circleViewController.swift in Sources */,
+				1879D04D1C8495280034C30D /* loginViewController.swift in Sources */,
 				18E732FA1C83D658007E204F /* LDXScore.m in Sources */,
 				18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */,
 				18A250D01C81B45800DFC2F6 /* pushNewBookController.swift in Sources */,

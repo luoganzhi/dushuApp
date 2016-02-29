@@ -12,18 +12,25 @@ class rankViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if AVUser.currentUser() == nil{
+            let story = UIStoryboard(name: "Login", bundle: nil)
+            let stortvc = story.instantiateViewControllerWithIdentifier("Login")
+            self.presentViewController(stortvc, animated: true) { () -> Void in
+            
+            }
+        }
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        let cgpoint = CGPoint(x: self.view.center.x, y: self.view.center.y - 100)
+//        self.view.backgroundColor = UIColor.whiteColor()
+//        let cgpoint = CGPoint(x: self.view.center.x, y: self.view.center.y - 100)
         
-        let label = UILabel(frame: CGRectMake(0,0,300,40))
-        label.center = cgpoint
-        label.textAlignment = NSTextAlignment.Center
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: MY_FONT, size: 40)
-        label.text = "哈哈，我是CommandZ!!!!!"
-        label.textColor = UIColor.blueColor()
-        self.view.addSubview(label)
+//        let label = UILabel(frame: CGRectMake(0,0,300,40))
+//        label.center = cgpoint
+//        label.textAlignment = NSTextAlignment.Center
+//        label.adjustsFontSizeToFitWidth = true
+//        label.font = UIFont(name: MY_FONT, size: 40)
+//        label.text = "哈哈，我是CommandZ!!!!!"
+//        label.textColor = UIColor.blueColor()
+//        self.view.addSubview(label)
         
 
         // Do any additional setup after loading the view.
