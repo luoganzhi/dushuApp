@@ -14,12 +14,13 @@ class rankViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
+        let cgpoint = CGPoint(x: self.view.center.x, y: self.view.center.y - 100)
         
-        let label = UILabel(frame: CGRectMake(0,0,100,20))
-        label.center = self.view.center
+        let label = UILabel(frame: CGRectMake(0,0,300,40))
+        label.center = cgpoint
         label.textAlignment = NSTextAlignment.Center
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: MY_FONT, size: 14)
+        label.font = UIFont(name: MY_FONT, size: 40)
         label.text = "哈哈，我是CommandZ!!!!!"
         label.textColor = UIColor.blueColor()
         self.view.addSubview(label)

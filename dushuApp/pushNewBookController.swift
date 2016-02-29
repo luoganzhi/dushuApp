@@ -147,7 +147,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         var row = indexPath.row
         
         if self.showScore && row > 1{
-            row--
+            row -= 1
         }
         
         switch row{
