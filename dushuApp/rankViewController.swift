@@ -9,14 +9,21 @@
 import UIKit
 
 class rankViewController: UIViewController {
+    
+    var loginKey: Bool = true  //设置是否打开注册界面的设置
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if AVUser.currentUser() == nil{
-            let story = UIStoryboard(name: "Login", bundle: nil)
-            let stortvc = story.instantiateViewControllerWithIdentifier("Login")
-            self.presentViewController(stortvc, animated: true) { () -> Void in
+        
+        AVUser.logOut()//登出
+        if loginKey == true{
+            if AVUser.currentUser() == nil{             //判断是否登陆了
+                let story = UIStoryboard(name: "Login", bundle: nil)
+                let stortvc = story.instantiateViewControllerWithIdentifier("Login")
             
+                self.presentViewController(stortvc, animated: true) { () -> Void in
+                
+                }
             }
         }
         

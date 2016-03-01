@@ -10,12 +10,41 @@ import UIKit
 
 class registerViewController: UIViewController {
 
+    @IBOutlet var topLayout: NSLayoutConstraint!
     @IBOutlet var userName: UITextField!
     @IBOutlet var passWord: UITextField!
     @IBOutlet var email: UITextField!
     
     
     @IBAction func register(sender: AnyObject) {
+        let user = AVUser()
+        user.username = self.userName.text
+        user.password = self.passWord.text
+        user.email = self.email.text
+        
+        //实例化user  然后进行注册
+        
+        user.signUpInBackgroundWithBlock { (success, error) -> Void in
+            if success{
+                ProgressHUD.showSuccess("注册成功")
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    
+                })
+            }else{
+                if error.code == 125{
+                    ProgressHUD.showError("邮箱错误")
+                }else if error.code == 203{
+                    ProgressHUD.showError("该邮箱已注册")
+                }else if error.code == 202{
+                    ProgressHUD.showError("用户名已存在")
+                }else{
+                    ProgressHUD.showError("注册失败")
+                }
+            
+            }
+        }
+        
+        
     }
     
     @IBAction func close(sender: AnyObject) {
@@ -28,6 +57,9 @@ class registerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        XKeyBoard.registerKeyBoardHide(self)
+        XKeyBoard.registerKeyBoardShow(self)
 
         // Do any additional setup after loading the view.
     }
@@ -37,15 +69,22 @@ class registerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func keyboardWillShowNotification(notification:NSNotification){
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.topLayout.constant = -100
+            self.view.layoutIfNeeded()
+        }
     }
-    */
+    
+    func keyboardWillHideNotification(notification:NSNotification){
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.topLayout.constant = 8
+            self.view.layoutIfNeeded()
+            
+        }
+    }
 
+    
+
+   
 }

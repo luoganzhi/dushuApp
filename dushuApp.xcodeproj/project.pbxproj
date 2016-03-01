@@ -15,6 +15,8 @@
 		1879D04B1C848D6D0034C30D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1879D04A1C848D6D0034C30D /* Login.storyboard */; };
 		1879D04D1C8495280034C30D /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D04C1C8495280034C30D /* loginViewController.swift */; };
 		1879D04F1C8495390034C30D /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D04E1C8495390034C30D /* registerViewController.swift */; };
+		1879D0541C851FEA0034C30D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1879D0511C851FEA0034C30D /* ProgressHUD.bundle */; };
+		1879D0551C851FEA0034C30D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0531C851FEA0034C30D /* ProgressHUD.m */; };
 		188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F8DE41C84567A00ECC222 /* XKeyBoard.m */; };
 		18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24F9A1C81813000DFC2F6 /* AppDelegate.swift */; };
 		18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A24FA11C81813000DFC2F6 /* Assets.xcassets */; };
@@ -103,6 +105,9 @@
 		1879D04A1C848D6D0034C30D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1879D04C1C8495280034C30D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		1879D04E1C8495390034C30D /* registerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		1879D0511C851FEA0034C30D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		1879D0521C851FEA0034C30D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		1879D0531C851FEA0034C30D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		188F8DE31C84567A00ECC222 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		188F8DE41C84567A00ECC222 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		18A24F971C81813000DFC2F6 /* dushuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dushuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +231,16 @@
 				1879D04E1C8495390034C30D /* registerViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		1879D0501C851FEA0034C30D /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1879D0511C851FEA0034C30D /* ProgressHUD.bundle */,
+				1879D0521C851FEA0034C30D /* ProgressHUD.h */,
+				1879D0531C851FEA0034C30D /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 		188F8DE21C84567A00ECC222 /* XKeyBoard */ = {
@@ -448,6 +463,7 @@
 		18A250D61C81CD0800DFC2F6 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				1879D0501C851FEA0034C30D /* ProgressHUD */,
 				188F8DE21C84567A00ECC222 /* XKeyBoard */,
 				18E733201C84159E007E204F /* IGLDropDownMenu */,
 				18E732FB1C840117007E204F /* AKSegmentedControl */,
@@ -682,6 +698,7 @@
 				18A250F31C81CF2900DFC2F6 /* ear1.png in Resources */,
 				18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */,
 				18E733181C840117007E204F /* segmented-separator.png in Resources */,
+				1879D0541C851FEA0034C30D /* ProgressHUD.bundle in Resources */,
 				18A250F01C81CF2900DFC2F6 /* blank.png in Resources */,
 				18E733111C840117007E204F /* segmented-bg-pressed-center@2x.png in Resources */,
 				18A250F11C81CF2900DFC2F6 /* Blank2.png in Resources */,
@@ -723,6 +740,7 @@
 				188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */,
 				18A24FE81C81870600DFC2F6 /* moreViewController.swift in Sources */,
 				1879D04F1C8495390034C30D /* registerViewController.swift in Sources */,
+				1879D0551C851FEA0034C30D /* ProgressHUD.m in Sources */,
 				18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */,
 				1837CA441C82F22B000C68F6 /* Push_TypeController.swift in Sources */,
 				18A250DF1C81CDBA00DFC2F6 /* JVFloatLabeledTextView.m in Sources */,

@@ -82,6 +82,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="passWord" destination="HvT-gQ-NgX" id="oWk-5C-Cec"/>
+                        <outlet property="topLayout" destination="TC5-kE-KN2" id="nwh-nM-co1"/>
                         <outlet property="userName" destination="fsF-sp-9ms" id="GBd-fk-8Q3"/>
                     </connections>
                 </viewController>
@@ -166,7 +167,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ja8-5J-bQd" secondAttribute="trailing" id="Qh9-I3-yx4"/>
                             <constraint firstItem="Hak-dI-hw4" firstAttribute="top" secondItem="Xz0-Be-ajD" secondAttribute="bottom" constant="8" id="UvJ-Xg-Bm3"/>
                             <constraint firstAttribute="trailing" secondItem="Xz0-Be-ajD" secondAttribute="trailing" id="VyS-KS-en5"/>
-                            <constraint firstItem="Qf9-gD-Gsg" firstAttribute="top" secondItem="cC5-YV-RIX" secondAttribute="bottom" constant="8" id="WN8-Il-038"/>
                             <constraint firstItem="a2R-8R-Kol" firstAttribute="top" secondItem="SZQ-0L-ip3" secondAttribute="bottom" constant="8" id="X4i-jX-JO1"/>
                             <constraint firstItem="Qf9-gD-Gsg" firstAttribute="top" secondItem="cC5-YV-RIX" secondAttribute="bottom" constant="8" id="YHM-aZ-1JF"/>
                             <constraint firstItem="SZQ-0L-ip3" firstAttribute="leading" secondItem="uuL-Aw-2g4" secondAttribute="leading" id="YO8-2J-hCE"/>
@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="email" destination="Xz0-Be-ajD" id="PgH-BD-utF"/>
                         <outlet property="passWord" destination="a2R-8R-Kol" id="FLf-jz-7oq"/>
+                        <outlet property="topLayout" destination="YHM-aZ-1JF" id="ocP-Vq-r6c"/>
                         <outlet property="userName" destination="SZQ-0L-ip3" id="N0Y-SK-mEz"/>
                     </connections>
                 </viewController>
