@@ -8,6 +8,8 @@
 
 import Foundation
 
+let LOGIN_KEY = true //设置是否打开注册界面的设置
+
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
 let SCREEN_HIGHT = UIScreen.mainScreen().bounds.size.height
 

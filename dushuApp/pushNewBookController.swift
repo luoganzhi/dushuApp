@@ -57,11 +57,39 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         self.score?.max_star = 5
         self.score?.show_score = 5
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("pushBookNotification:"), name: "pushBookNotification", object: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    deinit
+    {
+        print("没有发生内存泄露")//反初始化,清除所有通知
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
+    
+    
+    
+    //pushBookNotification方法的实现
+    
+    func pushBookNotification(notification: NSNotification){
+        let dict = notification.userInfo
+        if String((dict!["success"])!) == "true"{
+            ProgressHUD.showSuccess("上传成功")
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                
+            })
+        }else{
+            ProgressHUD.showError("上传失败")
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                
+            })
+        }
+        
     }
     
     //检查是否内存泄露
@@ -103,7 +131,17 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     }
     
     func sure(){
-        
+        let dict = [
+            "BookName": (self.BookTitle?.BookName?.text)!,
+            "BookEditor": (self.BookTitle?.BookEditor?.text)!,
+            "BookCover": (self.BookTitle?.BookOver?.currentImage)!,
+            "title": self.Book_Title,
+            "score": String((self.score?.show_star)!),
+            "type": self.type,
+            "detailType": self.detailType,
+            "description": self.Book_Description
+            ]
+        pushBook.pushBookInBackground(dict)
     }
     
     //实现VPImageCropperDelegate代理

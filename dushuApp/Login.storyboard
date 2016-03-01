@@ -56,6 +56,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoO-h5-Z7o">
                                 <rect key="frame" x="245" y="538" width="75" height="30"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="注册新用户"/>
                                 <connections>
                                     <segue destination="0uX-qS-WzB" kind="presentation" id="oYZ-TD-D4f"/>
@@ -146,8 +147,8 @@
                                     <action selector="register:" destination="0uX-qS-WzB" eventType="touchUpInside" id="QcN-Wf-7PZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-5J-bQd">
-                                <rect key="frame" x="253" y="20" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-5J-bQd">
+                                <rect key="frame" x="274" y="20" width="30" height="30"/>
                                 <state key="normal" title="关闭">
                                     <color key="titleColor" red="0.5723044276" green="0.57231825589999996" blue="0.5723108053" alpha="1" colorSpace="deviceRGB"/>
                                 </state>

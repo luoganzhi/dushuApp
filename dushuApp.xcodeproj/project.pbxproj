@@ -17,6 +17,7 @@
 		1879D04F1C8495390034C30D /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D04E1C8495390034C30D /* registerViewController.swift */; };
 		1879D0541C851FEA0034C30D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1879D0511C851FEA0034C30D /* ProgressHUD.bundle */; };
 		1879D0551C851FEA0034C30D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0531C851FEA0034C30D /* ProgressHUD.m */; };
+		1879D0571C8548A10034C30D /* pushBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0561C8548A10034C30D /* pushBook.swift */; };
 		188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F8DE41C84567A00ECC222 /* XKeyBoard.m */; };
 		18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24F9A1C81813000DFC2F6 /* AppDelegate.swift */; };
 		18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A24FA11C81813000DFC2F6 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		1879D0511C851FEA0034C30D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		1879D0521C851FEA0034C30D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		1879D0531C851FEA0034C30D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		1879D0561C8548A10034C30D /* pushBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushBook.swift; sourceTree = "<group>"; };
 		188F8DE31C84567A00ECC222 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		188F8DE41C84567A00ECC222 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		18A24F971C81813000DFC2F6 /* dushuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dushuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,6 +430,7 @@
 		18A250CC1C81B3A100DFC2F6 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				1879D0561C8548A10034C30D /* pushBook.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E7330F1C840117007E204F /* AKSegmentedControl.m in Sources */,
+				1879D0571C8548A10034C30D /* pushBook.swift in Sources */,
 				18A250D31C81B59A00DFC2F6 /* GeneralFactory.swift in Sources */,
 				18A24FD71C81850400DFC2F6 /* config.swift in Sources */,
 				18A250DE1C81CDBA00DFC2F6 /* JVFloatLabeledTextField.m in Sources */,
