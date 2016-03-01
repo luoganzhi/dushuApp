@@ -8,13 +8,25 @@
 
 import UIKit
 
-class pushViewController: UIViewController {
+class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    var dataArrary = NSMutableArray()
+    var tableView : UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavgationBar()
         self.view.backgroundColor = UIColor.whiteColor()
-
+        
+        tableView = UITableView(frame: self.view.frame)
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView?.tableFooterView = UIView()
+        self.view.addSubview(tableView!)
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("headerRefresh"))
+        tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "footerRefresh")
+        tableView?.mj_header.beginRefreshing()
         // Do any additional setup after loading the view.
     }
 
@@ -48,16 +60,49 @@ class pushViewController: UIViewController {
             
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //实现 Delegate 和 Datasource
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView?.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArrary.count
+    }
 
+    //实现刷新的方法
+    func headerRefresh(){
+        let query = AVQuery(className: "Book")
+        query.orderByDescending("createdAt")
+        
+        query.limit = 20
+        query.skip = 0
+        query.whereKey("user", equalTo: AVUser.currentUser())
+        query.findObjectsInBackgroundWithBlock { (result, error) -> Void in
+            self.tableView?.mj_header.endRefreshing() //停止刷新
+            self.dataArrary.removeAllObjects()
+            self.dataArrary.addObjectsFromArray(result)
+            self.tableView?.reloadData()
+        }
+    
+    }
+    
+    func footerRefresh(){
+        let query = AVQuery(className: "Book")
+        query.orderByDescending("createdAt")
+        query.limit = 20
+        query.skip = self.dataArrary.count
+        query.whereKey("user", equalTo: AVUser.currentUser())
+        query.findObjectsInBackgroundWithBlock { (result, error) -> Void in
+            self.tableView?.mj_footer.endRefreshing() //停止刷新
+            self.dataArrary.addObjectsFromArray(result)
+            self.tableView?.reloadData()
+        }
+
+    
+    }
 }
