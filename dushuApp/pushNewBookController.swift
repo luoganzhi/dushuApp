@@ -216,9 +216,9 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if showScore && indexPath.row > 5 {
+        if showScore && indexPath.row >= 5 {
             return 88
-        }else if !showScore && indexPath.row > 4 {
+        }else if !showScore && indexPath.row >= 4 {
             return 88
         }else{
             return 44
