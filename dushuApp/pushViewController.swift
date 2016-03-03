@@ -91,6 +91,14 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell!
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)
+        let vc = BookDetailViewController()
+        vc.BookObject = self.dataArrary[indexPath.row] as? AVObject
+        vc.hidesBottomBarWhenPushed = true //push后会隐藏下面的tablebar
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArrary.count
     }

@@ -22,6 +22,7 @@ class pushBook_Cell: UITableViewCell {
         // Initialization code
     }
     
+    //重写Cell
     override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         for view in self.contentView.subviews{

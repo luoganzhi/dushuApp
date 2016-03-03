@@ -91,6 +91,8 @@
 		18A7FACA1C88074C00E4E483 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FAB81C88074C00E4E483 /* UIImageView+HighlightedWebCache.m */; };
 		18A7FACB1C88074C00E4E483 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FABA1C88074C00E4E483 /* UIImageView+WebCache.m */; };
 		18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */; };
+		18C820551C8829C300B0C47A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820541C8829C300B0C47A /* BookDetailViewController.swift */; };
+		18C820571C882C2B00B0C47A /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820561C882C2B00B0C47A /* BookDetailView.swift */; };
 		18E732F81C83D658007E204F /* btn_star_evaluation_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */; };
 		18E732F91C83D658007E204F /* btn_star_evaluation_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F51C83D658007E204F /* btn_star_evaluation_press.png */; };
 		18E732FA1C83D658007E204F /* LDXScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E732F71C83D658007E204F /* LDXScore.m */; };
@@ -266,6 +268,8 @@
 		18A7FABA1C88074C00E4E483 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		18A7FABB1C88074C00E4E483 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		18C820541C8829C300B0C47A /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		18C820561C882C2B00B0C47A /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_normal.png; sourceTree = "<group>"; };
 		18E732F51C83D658007E204F /* btn_star_evaluation_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_press.png; sourceTree = "<group>"; };
 		18E732F61C83D658007E204F /* LDXScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDXScore.h; sourceTree = "<group>"; };
@@ -480,6 +484,7 @@
 		18A24F991C81813000DFC2F6 /* dushuApp */ = {
 			isa = PBXGroup;
 			children = (
+				18C820501C88293C00B0C47A /* bookDetailViewController */,
 				1879D0491C848D530034C30D /* Login */,
 				18A250D11C81B54900DFC2F6 /* Factory */,
 				18A250CB1C81B39300DFC2F6 /* pushNewBook */,
@@ -754,6 +759,39 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		18C820501C88293C00B0C47A /* bookDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18C820531C88298000B0C47A /* C */,
+				18C820521C88297000B0C47A /* V */,
+				18C820511C88295700B0C47A /* M */,
+			);
+			name = bookDetailViewController;
+			sourceTree = "<group>";
+		};
+		18C820511C88295700B0C47A /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
+		18C820521C88297000B0C47A /* V */ = {
+			isa = PBXGroup;
+			children = (
+				18C820561C882C2B00B0C47A /* BookDetailView.swift */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		18C820531C88298000B0C47A /* C */ = {
+			isa = PBXGroup;
+			children = (
+				18C820541C8829C300B0C47A /* BookDetailViewController.swift */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
 		18E732F31C83D658007E204F /* LDXScore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,6 +1044,7 @@
 				188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */,
 				18A24FE81C81870600DFC2F6 /* moreViewController.swift in Sources */,
 				1879D04F1C8495390034C30D /* registerViewController.swift in Sources */,
+				18C820551C8829C300B0C47A /* BookDetailViewController.swift in Sources */,
 				1879D0551C851FEA0034C30D /* ProgressHUD.m in Sources */,
 				18A7FAC31C88074C00E4E483 /* SDWebImageDownloaderOperation.m in Sources */,
 				18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */,
@@ -1013,6 +1052,7 @@
 				18A250DF1C81CDBA00DFC2F6 /* JVFloatLabeledTextView.m in Sources */,
 				1837CA401C82F1F1000C68F6 /* Push_TitleController.swift in Sources */,
 				1879D0911C85825C0034C30D /* MJRefreshNormalHeader.m in Sources */,
+				18C820571C882C2B00B0C47A /* BookDetailView.swift in Sources */,
 				1879D08B1C85825C0034C30D /* MJRefreshAutoNormalFooter.m in Sources */,
 				1879D0971C85825C0034C30D /* UIView+MJExtension.m in Sources */,
 				18A24FE01C8186D400DFC2F6 /* rankViewController.swift in Sources */,
