@@ -12,7 +12,7 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     var dataArrary = NSMutableArray()
     var tableView : UITableView?
-    
+    var navigationView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func setNavgationBar(){
-        let navigationView = UIView(frame: CGRectMake(0,-20,SCREEN_WIDTH,65))
+        navigationView = UIView(frame: CGRectMake(0,-20,SCREEN_WIDTH,65))
         navigationView.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.addSubview(navigationView)
         
@@ -55,7 +55,13 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
     }
+    override func viewWillAppear(animated: Bool) {
+        navigationView.hidden = false
+    }
     
+    override func viewWillDisappear(animated: Bool) {
+        navigationView.hidden = true
+    }
     func pushNewBook(){
     
         let vc = pushNewBookController()

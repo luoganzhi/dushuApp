@@ -23,13 +23,14 @@ class BookDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        VIEW_HIGHT = frame.width
-        VIEW_WIDTH = frame.height
+        VIEW_WIDTH = frame.width
+        VIEW_HIGHT = frame.height
+        self.backgroundColor = UIColor.whiteColor()
         
         BookCover = UIImageView(frame: CGRect(x: 8, y: 8, width: (VIEW_HIGHT - 16) / 1.273, height: VIEW_HIGHT - 16))
         self.addSubview(BookCover!)
         
-        BookEditor = UILabel(frame: CGRect(x: (VIEW_HIGHT - 16) / 1.273 + 16, y: 8, width: VIEW_WIDTH - (VIEW_HIGHT - 16) / 1.273 - 16, height: VIEW_HIGHT / 4))
+        BookName = UILabel(frame: CGRect(x: (VIEW_HIGHT - 16) / 1.273 + 16, y: 8, width: VIEW_WIDTH - (VIEW_HIGHT - 16) / 1.273 - 16, height: VIEW_HIGHT / 4))
         BookName?.font = UIFont(name: MY_FONT, size: 18)
         self.addSubview(BookName!)
         
@@ -77,6 +78,7 @@ class BookDetailView: UIView {
         // Drawing code
     }
     */
+    //重写线条样式
     override func drawRect(rect: CGRect) {
         // Drawing code
         let context = UIGraphicsGetCurrentContext()
