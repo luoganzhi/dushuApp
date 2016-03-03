@@ -13,6 +13,7 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var dataArrary = NSMutableArray()
     var tableView : UITableView?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavgationBar()
@@ -21,9 +22,12 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView = UITableView(frame: self.view.frame)
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
-        tableView?.tableFooterView = UIView()
+        tableView?.registerClass(pushBook_Cell.classForCoder(), forCellReuseIdentifier: "cell")
+        //tableView?.tableFooterView = UIView()
+        tableView?.separatorStyle = .None//去除Cell的线条
         self.view.addSubview(tableView!)
+        
+        
         tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("headerRefresh"))
         tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "footerRefresh")
         tableView?.mj_header.beginRefreshing()
@@ -65,8 +69,25 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 1
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 88
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView?.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = self.tableView?.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? pushBook_Cell
+        
+        let dict = self.dataArrary[indexPath.row] as? AVObject
+        cell?.BookName?.text = (dict!["BookName"] as? String)! + (dict!["title"] as? String)!
+        cell?.Editor?.text = "作者：" + (dict!["BookEditor"] as? String)!
+        
+        let date = dict!["createdAt"] as? NSDate
+        let formate = NSDateFormatter()
+        formate.dateFormat = "yyyy-MM-dd hh:mm"
+        cell?.More?.text = formate.stringFromDate(date!)
+        
+        let coverFile = dict!["cover"] as? AVFile
+        cell?.BookCover?.sd_setImageWithURL(NSURL(string: (coverFile?.url)!), placeholderImage: UIImage(named: "Cover"))
+        
         return cell!
     }
     

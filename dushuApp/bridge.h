@@ -18,3 +18,5 @@
 
 #import "MJRefresh.h"//刷新控件
 
+#import "UIImageView+WebCache.h"//多线程网络加载图片和缓存
+
