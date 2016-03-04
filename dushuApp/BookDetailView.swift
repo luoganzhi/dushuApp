@@ -83,7 +83,7 @@ class BookDetailView: UIView {
         // Drawing code
         let context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 0.5)
-        CGContextSetRGBFillColor(context, 231 / 255, 231 / 255, 231 / 255, 1)
+        CGContextSetRGBStrokeColor(context, 231 / 255, 231 / 255, 231 / 255, 1)
         CGContextMoveToPoint(context, 8, VIEW_HIGHT - 2)
         CGContextAddLineToPoint(context, VIEW_WIDTH - 8, VIEW_HIGHT - 2)
         CGContextStrokePath(context)

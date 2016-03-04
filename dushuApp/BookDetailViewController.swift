@@ -8,11 +8,15 @@
 
 import UIKit
 
-class BookDetailViewController: UIViewController {
+class BookDetailViewController: UIViewController ,BookTabBarDelegate{
 
     var BookObject : AVObject?
     
     var BookTitleView : BookDetailView?
+    
+    var bookViewTabBar : BookTabBar!
+    
+    var bookTextView : UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,17 @@ class BookDetailViewController: UIViewController {
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics: .Default)
         
         self.initBookTitleView()
+        
+        bookViewTabBar = BookTabBar(frame: CGRect(x: 0, y: SCREEN_HIGHT - 40, width: SCREEN_WIDTH, height: 40))
+        //bookViewTabBar.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(bookViewTabBar)
+        bookViewTabBar.delegate = self
+        
+        bookTextView = UITextView(frame: CGRect(x: 0, y: 64 + SCREEN_HIGHT / 4, width: SCREEN_WIDTH, height: SCREEN_HIGHT - SCREEN_HIGHT / 4 - 40 - 64))
+        bookTextView.text = BookObject!["description"] as? String
+        bookTextView.editable = false
+        
+        self.view.addSubview(bookTextView)
 
         // Do any additional setup after loading the view.
     }
@@ -62,6 +77,22 @@ class BookDetailViewController: UIViewController {
     
     }
     
+    
+    //delegate
+    
+    func comment(){
+    
+    }
+    func commentControl(){
+    
+    }
+    func likeBook(){
+    
+    }
+    func sharkAction(){
+    
+    }
+
     
     
 

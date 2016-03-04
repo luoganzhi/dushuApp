@@ -37,6 +37,7 @@
 		1879D0951C85825C0034C30D /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0801C85825C0034C30D /* UIScrollView+MJExtension.m */; };
 		1879D0961C85825C0034C30D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0821C85825C0034C30D /* UIScrollView+MJRefresh.m */; };
 		1879D0971C85825C0034C30D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879D0841C85825C0034C30D /* UIView+MJExtension.m */; };
+		1882C3621C88966A00D05BB2 /* BookTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882C3611C88966A00D05BB2 /* BookTabBar.swift */; };
 		188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F8DE41C84567A00ECC222 /* XKeyBoard.m */; };
 		18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24F9A1C81813000DFC2F6 /* AppDelegate.swift */; };
 		18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A24FA11C81813000DFC2F6 /* Assets.xcassets */; };
@@ -186,6 +187,7 @@
 		1879D0821C85825C0034C30D /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		1879D0831C85825C0034C30D /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		1879D0841C85825C0034C30D /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1882C3611C88966A00D05BB2 /* BookTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTabBar.swift; sourceTree = "<group>"; };
 		188F8DE31C84567A00ECC222 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		188F8DE41C84567A00ECC222 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		18A24F971C81813000DFC2F6 /* dushuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dushuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -780,6 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				18C820561C882C2B00B0C47A /* BookDetailView.swift */,
+				1882C3611C88966A00D05BB2 /* BookTabBar.swift */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 				18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */,
 				18A7FABF1C88074C00E4E483 /* SDImageCache.m in Sources */,
 				18A7FAC41C88074C00E4E483 /* SDWebImageManager.m in Sources */,
+				1882C3621C88966A00D05BB2 /* BookTabBar.swift in Sources */,
 				18A24FE21C8186E500DFC2F6 /* searchViewController.swift in Sources */,
 				18A7FAC51C88074C00E4E483 /* SDWebImagePrefetcher.m in Sources */,
 				1879D0851C85825C0034C30D /* MJRefreshAutoFooter.m in Sources */,
