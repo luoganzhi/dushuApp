@@ -20,3 +20,6 @@
 
 #import "UIImageView+WebCache.h"//多线程网络加载图片和缓存
 
+#import "InputView.h"//评论的库
+
+
