@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180AA2DF1C89CEF200DA3C2D /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AA2DB1C89CEF200DA3C2D /* InputView.m */; };
+		180AA2E01C89CEF200DA3C2D /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180AA2DC1C89CEF200DA3C2D /* InputView.xib */; };
+		180AA2E11C89CEF200DA3C2D /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AA2DE1C89CEF200DA3C2D /* UIViewExt.m */; };
 		1837CA401C82F1F1000C68F6 /* Push_TitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837CA3F1C82F1F1000C68F6 /* Push_TitleController.swift */; };
 		1837CA441C82F22B000C68F6 /* Push_TypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837CA431C82F22B000C68F6 /* Push_TypeController.swift */; };
 		1837CA461C82F26B000C68F6 /* Push_DescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837CA451C82F26B000C68F6 /* Push_DescriptionController.swift */; };
@@ -116,6 +119,8 @@
 		18E7331F1C840117007E204F /* star-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E7330E1C840117007E204F /* star-icon@2x.png */; };
 		18E733251C84159E007E204F /* IGLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E733221C84159E007E204F /* IGLDropDownItem.m */; };
 		18E733261C84159E007E204F /* IGLDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E733241C84159E007E204F /* IGLDropDownMenu.m */; };
+		18E90D781C8AD33700568119 /* commentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E90D771C8AD33700568119 /* commentViewController.swift */; };
+		18E90D7A1C8AE42100568119 /* discussCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E90D791C8AE42100568119 /* discussCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +141,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180AA2DA1C89CEF200DA3C2D /* InputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputView.h; sourceTree = "<group>"; };
+		180AA2DB1C89CEF200DA3C2D /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
+		180AA2DC1C89CEF200DA3C2D /* InputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
+		180AA2DD1C89CEF200DA3C2D /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		180AA2DE1C89CEF200DA3C2D /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		1837CA3F1C82F1F1000C68F6 /* Push_TitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_TitleController.swift; sourceTree = "<group>"; };
 		1837CA431C82F22B000C68F6 /* Push_TypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_TypeController.swift; sourceTree = "<group>"; };
 		1837CA451C82F26B000C68F6 /* Push_DescriptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Push_DescriptionController.swift; sourceTree = "<group>"; };
@@ -298,6 +308,8 @@
 		18E733221C84159E007E204F /* IGLDropDownItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownItem.m; sourceTree = "<group>"; };
 		18E733231C84159E007E204F /* IGLDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLDropDownMenu.h; sourceTree = "<group>"; };
 		18E733241C84159E007E204F /* IGLDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLDropDownMenu.m; sourceTree = "<group>"; };
+		18E90D771C8AD33700568119 /* commentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentViewController.swift; sourceTree = "<group>"; };
+		18E90D791C8AE42100568119 /* discussCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = discussCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +342,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180AA2D91C89CEF200DA3C2D /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				180AA2DA1C89CEF200DA3C2D /* InputView.h */,
+				180AA2DB1C89CEF200DA3C2D /* InputView.m */,
+				180AA2DC1C89CEF200DA3C2D /* InputView.xib */,
+				180AA2DD1C89CEF200DA3C2D /* UIViewExt.h */,
+				180AA2DE1C89CEF200DA3C2D /* UIViewExt.m */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
 		18448D541C82D5AA004BD5A0 /* VPImageCropperViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +699,7 @@
 		18A250D61C81CD0800DFC2F6 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				180AA2D91C89CEF200DA3C2D /* InputView */,
 				18A7FA9B1C88074C00E4E483 /* SDWebImage */,
 				1879D0581C85825C0034C30D /* MJRefresh */,
 				1879D0501C851FEA0034C30D /* ProgressHUD */,
@@ -783,6 +808,7 @@
 			children = (
 				18C820561C882C2B00B0C47A /* BookDetailView.swift */,
 				1882C3611C88966A00D05BB2 /* BookTabBar.swift */,
+				18E90D791C8AE42100568119 /* discussCell.swift */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -791,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				18C820541C8829C300B0C47A /* BookDetailViewController.swift */,
+				18E90D771C8AD33700568119 /* commentViewController.swift */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -973,6 +1000,7 @@
 				18E7331C1C840117007E204F /* social-icon.png in Resources */,
 				18E7331F1C840117007E204F /* star-icon@2x.png in Resources */,
 				18A250F51C81CF2900DFC2F6 /* Icon2.png in Resources */,
+				180AA2E01C89CEF200DA3C2D /* InputView.xib in Resources */,
 				18A250F91C81CF2900DFC2F6 /* page3.png in Resources */,
 				18E733131C840117007E204F /* segmented-bg-pressed-left@2x.png in Resources */,
 				18E733191C840117007E204F /* segmented-separator@2x.png in Resources */,
@@ -1036,6 +1064,7 @@
 				18A7FACA1C88074C00E4E483 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1879D0951C85825C0034C30D /* UIScrollView+MJExtension.m in Sources */,
 				1879D0901C85825C0034C30D /* MJRefreshGifHeader.m in Sources */,
+				180AA2DF1C89CEF200DA3C2D /* InputView.m in Sources */,
 				18448D571C82D5AA004BD5A0 /* VPImageCropperViewController.m in Sources */,
 				1879D0921C85825C0034C30D /* MJRefreshStateHeader.m in Sources */,
 				18A7FAC21C88074C00E4E483 /* SDWebImageDownloader.m in Sources */,
@@ -1052,6 +1081,7 @@
 				18A7FAC31C88074C00E4E483 /* SDWebImageDownloaderOperation.m in Sources */,
 				18448D531C82BCF7004BD5A0 /* PhotoPickerViewController.swift in Sources */,
 				1837CA441C82F22B000C68F6 /* Push_TypeController.swift in Sources */,
+				180AA2E11C89CEF200DA3C2D /* UIViewExt.m in Sources */,
 				18A250DF1C81CDBA00DFC2F6 /* JVFloatLabeledTextView.m in Sources */,
 				1837CA401C82F1F1000C68F6 /* Push_TitleController.swift in Sources */,
 				1879D0911C85825C0034C30D /* MJRefreshNormalHeader.m in Sources */,
@@ -1061,7 +1091,9 @@
 				18A24FE01C8186D400DFC2F6 /* rankViewController.swift in Sources */,
 				18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */,
 				18A7FABF1C88074C00E4E483 /* SDImageCache.m in Sources */,
+				18E90D781C8AD33700568119 /* commentViewController.swift in Sources */,
 				18A7FAC41C88074C00E4E483 /* SDWebImageManager.m in Sources */,
+				18E90D7A1C8AE42100568119 /* discussCell.swift in Sources */,
 				1882C3621C88966A00D05BB2 /* BookTabBar.swift in Sources */,
 				18A24FE21C8186E500DFC2F6 /* searchViewController.swift in Sources */,
 				18A7FAC51C88074C00E4E483 /* SDWebImagePrefetcher.m in Sources */,

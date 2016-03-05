@@ -11,7 +11,7 @@ import UIKit
 protocol BookTabBarDelegate{
     func comment()
     func commentControl()
-    func likeBook()
+    func likeBook(btn: UIButton)
     func sharkAction()
     
 }
@@ -63,7 +63,7 @@ class BookTabBar: UIView {
             delegate?.commentControl()
             break
         case 2:
-            delegate?.likeBook()
+            delegate?.likeBook(btn)
             break
         case 3:
             delegate?.sharkAction()

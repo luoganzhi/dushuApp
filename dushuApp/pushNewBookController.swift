@@ -131,6 +131,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     }
     
     func sure(){
+        ProgressHUD.show("")//优化上传显示
         let dict = [
             "BookName": (self.BookTitle?.BookName?.text)!,
             "BookEditor": (self.BookTitle?.BookEditor?.text)!,
