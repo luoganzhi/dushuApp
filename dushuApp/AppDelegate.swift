@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AVOSCloud.setApplicationId("1hyjRmJ1sFx8WxvKQkAHcxnG-gzGzoHsz", clientKey: "T0JnGAqSLgzRfUFFgUvxebLk")
         
         self.window = UIWindow(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HIGHT))
-            
+//        self.window?.backgroundColor = UIColor.whiteColor()
+        
         let tarbarController = UITabBarController()
         
         let rankController = UINavigationController(rootViewController: rankViewController())

@@ -8,11 +8,15 @@
 
 import UIKit
 
-class commentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class commentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,InputViewDelegate {
     
     var tableview: UITableView?
     var dataArrary = NSMutableArray()
     var BookObject: AVObject?
+    var keyBoard: CGFloat?
+    var input: InputView?
+    var layView: UIView?
+
     
     
     override func viewDidLoad() {
@@ -33,6 +37,18 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.tableview?.dataSource = self
         self.tableview?.tableFooterView = UIView()
         self.view.addSubview(self.tableview!)
+        
+        self.input = NSBundle.mainBundle().loadNibNamed("InputView", owner: self, options: nil).last as? InputView
+        self.input!.frame = CGRect(x: 0, y: SCREEN_HIGHT - 44, width: SCREEN_WIDTH, height: 44)
+        self.input!.delegate = self
+        self.view.addSubview(input!)
+        
+        self.layView = UIView(frame: self.view.frame)
+        self.layView?.backgroundColor = UIColor.grayColor()
+        self.layView?.alpha = 0
+        let tap = UITapGestureRecognizer(target: self, action: Selector("tapLayView"))
+        self.layView?.addGestureRecognizer(tap)
+        self.view.insertSubview(self.layView!, belowSubview: self.input!)
        
         
         
@@ -44,6 +60,66 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         // Do any additional setup after loading the view.
     }
+    
+    //手势的点击
+    
+    func tapLayView(){
+        input?.inputTextView?.resignFirstResponder()
+    }
+    
+    
+    //InputViewDelegate
+    func publishButtonDidClick(button: UIButton!) {
+        ProgressHUD.show("")
+        let object = AVObject(className: "discuss")
+        object.setObject(self.input?.inputTextView?.text, forKey: "text")
+        object.setObject(AVUser.currentUser(), forKey: "user")
+        object.setObject(self.BookObject, forKey: "BookObject")
+        object.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                self.input?.inputTextView?.resignFirstResponder()
+                ProgressHUD.showSuccess("评论成功")
+                
+                self.input?.inputTextView?.text = ""
+//                self.tableview?.mj_header.beginRefreshing()
+                
+            }
+        }
+
+    }
+    
+    func textViewHeightDidChange(height: CGFloat) {
+        self.input?.height = height + 10
+        self.input?.bottom = SCREEN_HIGHT - self.keyBoard!
+        
+    }
+    
+    func keyboardWillShow(inputView: InputView!, keyboardHeight: CGFloat, animationDuration duration: NSTimeInterval, animationCurve: UIViewAnimationCurve) {
+        self.keyBoard = keyboardHeight
+        self.layView?.alpha = 0
+        self.layView?.hidden = false
+        //self.input?.inputTextView?.becomeFirstResponder()
+        UIView.animateWithDuration(duration, delay: 0, options: .BeginFromCurrentState, animations: { () -> Void in
+            self.layView?.alpha = 0
+            self.input?.bottom = SCREEN_HIGHT - keyboardHeight
+            }) { (finish) -> Void in
+                
+        }
+    }
+    
+    func keyboardWillHide(inputView: InputView!, keyboardHeight: CGFloat, animationDuration duration: NSTimeInterval, animationCurve: UIViewAnimationCurve) {
+        //self.input?.inputTextView?.resignFirstResponder()
+        UIView.animateWithDuration(duration, delay: 0, options: .BeginFromCurrentState, animations: { () -> Void in
+            self.layView?.alpha = 0
+            self.input?.bottom = SCREEN_HIGHT
+            }) { (finish) -> Void in
+                self.input?.resetInputView()
+                self.input?.bottom = SCREEN_HIGHT
+                self.layView?.hidden = true
+        }
+    }
+    
+    
     //实现上拉和下拉方法
     
     func headerRefresh(){
@@ -107,6 +183,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell?.initFrame()
         
         let object = self.dataArrary[indexPath.row] as? AVObject
+        
         
         let user = object!["user"] as? AVUser
         cell?.nameLabel?.text = user?.username
