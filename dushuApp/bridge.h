@@ -24,4 +24,6 @@
 
 #import "SWTableViewCell.h"//左划操作的库
 
+#import "HZPhotoBrowser.h"//图片预览
+
 

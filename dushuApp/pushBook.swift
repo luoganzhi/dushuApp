@@ -11,11 +11,11 @@ import UIKit
 class pushBook: NSObject {
     
     //定义一个上传的类方法
-    static func pushBookInBackground(dict: NSDictionary){
+    static func pushBookInBackground(dict: NSDictionary,obj: AVObject){
         
         
         
-        let obj = AVObject(className: "Book")
+        
         obj.setObject(dict["BookName"], forKey: "BookName")
         obj.setObject(dict["BookEditor"], forKey: "BookEditor")
         //obj.setObject(obj["BookCover"], forKey: "BookCover")

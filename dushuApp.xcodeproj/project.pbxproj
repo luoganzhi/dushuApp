@@ -103,6 +103,10 @@
 		18D5DD7F1C8C768900E621FB /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD771C8C768900E621FB /* SWTableViewCell.m */; };
 		18D5DD801C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD791C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m */; };
 		18D5DD811C8C768900E621FB /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */; };
+		18D5DD8B1C8D4DD800E621FB /* HZIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD841C8D4DD800E621FB /* HZIndicatorView.m */; };
+		18D5DD8C1C8D4DD800E621FB /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD861C8D4DD800E621FB /* HZPhotoBrowser.m */; };
+		18D5DD8D1C8D4DD800E621FB /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD891C8D4DD800E621FB /* HZPhotoBrowserView.m */; };
+		18D5DD8E1C8D4DD800E621FB /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D5DD8A1C8D4DD800E621FB /* whiteplaceholder.png */; };
 		18E732F81C83D658007E204F /* btn_star_evaluation_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */; };
 		18E732F91C83D658007E204F /* btn_star_evaluation_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F51C83D658007E204F /* btn_star_evaluation_press.png */; };
 		18E732FA1C83D658007E204F /* LDXScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E732F71C83D658007E204F /* LDXScore.m */; };
@@ -300,6 +304,14 @@
 		18D5DD791C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
 		18D5DD7A1C8C768900E621FB /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
+		18D5DD831C8D4DD800E621FB /* HZIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZIndicatorView.h; sourceTree = "<group>"; };
+		18D5DD841C8D4DD800E621FB /* HZIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZIndicatorView.m; sourceTree = "<group>"; };
+		18D5DD851C8D4DD800E621FB /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
+		18D5DD861C8D4DD800E621FB /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
+		18D5DD871C8D4DD800E621FB /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		18D5DD881C8D4DD800E621FB /* HZPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserView.h; sourceTree = "<group>"; };
+		18D5DD891C8D4DD800E621FB /* HZPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowserView.m; sourceTree = "<group>"; };
+		18D5DD8A1C8D4DD800E621FB /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
 		18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_normal.png; sourceTree = "<group>"; };
 		18E732F51C83D658007E204F /* btn_star_evaluation_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_press.png; sourceTree = "<group>"; };
 		18E732F61C83D658007E204F /* LDXScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDXScore.h; sourceTree = "<group>"; };
@@ -717,6 +729,7 @@
 		18A250D61C81CD0800DFC2F6 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				18D5DD821C8D4DD800E621FB /* HZPhotoBrowser */,
 				18D5DD6F1C8C768900E621FB /* LeftSwipeCell */,
 				180AA2D91C89CEF200DA3C2D /* InputView */,
 				18A7FA9B1C88074C00E4E483 /* SDWebImage */,
@@ -858,6 +871,21 @@
 				18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */,
 			);
 			path = LeftSwipeCell;
+			sourceTree = "<group>";
+		};
+		18D5DD821C8D4DD800E621FB /* HZPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				18D5DD831C8D4DD800E621FB /* HZIndicatorView.h */,
+				18D5DD841C8D4DD800E621FB /* HZIndicatorView.m */,
+				18D5DD851C8D4DD800E621FB /* HZPhotoBrowser.h */,
+				18D5DD861C8D4DD800E621FB /* HZPhotoBrowser.m */,
+				18D5DD871C8D4DD800E621FB /* HZPhotoBrowserConfig.h */,
+				18D5DD881C8D4DD800E621FB /* HZPhotoBrowserView.h */,
+				18D5DD891C8D4DD800E621FB /* HZPhotoBrowserView.m */,
+				18D5DD8A1C8D4DD800E621FB /* whiteplaceholder.png */,
+			);
+			path = HZPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		18E732F31C83D658007E204F /* LDXScore */ = {
@@ -1026,6 +1054,7 @@
 				18E7331E1C840117007E204F /* star-icon.png in Resources */,
 				18A250F71C81CF2900DFC2F6 /* page1.png in Resources */,
 				18A250FB1C81CF2900DFC2F6 /* red_point.png in Resources */,
+				18D5DD8E1C8D4DD800E621FB /* whiteplaceholder.png in Resources */,
 				18A250F41C81CF2900DFC2F6 /* ear2.png in Resources */,
 				18E733171C840117007E204F /* segmented-bg@2x.png in Resources */,
 				18E733161C840117007E204F /* segmented-bg.png in Resources */,
@@ -1119,6 +1148,7 @@
 				188F8DE51C84567A00ECC222 /* XKeyBoard.m in Sources */,
 				18A24FE81C81870600DFC2F6 /* moreViewController.swift in Sources */,
 				1879D04F1C8495390034C30D /* registerViewController.swift in Sources */,
+				18D5DD8B1C8D4DD800E621FB /* HZIndicatorView.m in Sources */,
 				18C820551C8829C300B0C47A /* BookDetailViewController.swift in Sources */,
 				1879D0551C851FEA0034C30D /* ProgressHUD.m in Sources */,
 				18A7FAC31C88074C00E4E483 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1134,6 +1164,7 @@
 				18A24FE01C8186D400DFC2F6 /* rankViewController.swift in Sources */,
 				18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */,
 				18A7FABF1C88074C00E4E483 /* SDImageCache.m in Sources */,
+				18D5DD8D1C8D4DD800E621FB /* HZPhotoBrowserView.m in Sources */,
 				18E90D781C8AD33700568119 /* commentViewController.swift in Sources */,
 				18A7FAC41C88074C00E4E483 /* SDWebImageManager.m in Sources */,
 				18E90D7A1C8AE42100568119 /* discussCell.swift in Sources */,
@@ -1148,6 +1179,7 @@
 				1879D08D1C85825C0034C30D /* MJRefreshBackGifFooter.m in Sources */,
 				18A7FACB1C88074C00E4E483 /* UIImageView+WebCache.m in Sources */,
 				18E732FA1C83D658007E204F /* LDXScore.m in Sources */,
+				18D5DD8C1C8D4DD800E621FB /* HZPhotoBrowser.m in Sources */,
 				1879D0941C85825C0034C30D /* MJRefreshConst.m in Sources */,
 				18A7FABD1C88074C00E4E483 /* MKAnnotationView+WebCache.m in Sources */,
 				18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */,

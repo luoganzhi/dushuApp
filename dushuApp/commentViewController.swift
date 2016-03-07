@@ -82,7 +82,10 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 ProgressHUD.showSuccess("评论成功")
                 
                 self.input?.inputTextView?.text = ""
-//                self.tableview?.mj_header.beginRefreshing()
+                self.BookObject?.incrementKey("loveNumber")
+                self.BookObject?.saveInBackground()
+
+
                 
             }
         }

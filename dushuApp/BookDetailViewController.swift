@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDelegate{
+class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDelegate,HZPhotoBrowserDelegate{
 
     var BookObject : AVObject?
     
@@ -95,9 +95,19 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
         let scroeString = BookObject!["score"] as! String
         BookTitleView?.score?.show_star = Int(scroeString)!
         
-        BookTitleView?.more?.text = "65个喜欢.5次评论.15000次浏览"
+        let scanNumber = BookObject!["scanNumber"] as? NSNumber
+        let loveNumber = BookObject!["loveNumber"] as? NSNumber
+        let discussNumber = BookObject!["discussNumber"] as? NSNumber
         
         
+        BookTitleView?.more?.text = (loveNumber?.stringValue)! + "个喜欢." + (discussNumber?.stringValue)! + "次评论." + (scanNumber?.stringValue)! + "次浏览"
+        
+        let tap = UITapGestureRecognizer(target: self, action: Selector("photoBrowser"))
+        self.BookTitleView?.BookCover?.addGestureRecognizer(tap)
+        self.BookTitleView?.BookCover?.userInteractionEnabled = true
+        
+        BookObject?.incrementKey("scanNumber")
+        BookObject?.saveInBackground()
         
     
     }
@@ -138,10 +148,14 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
         object.setObject(self.BookObject, forKey: "BookObject")
         object.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
+                
                 self.input?.inputTextView?.resignFirstResponder()
                 ProgressHUD.showSuccess("评论成功")
                 self.input?.inputTextView?.text = ""
-                
+                self.BookObject?.incrementKey("loveNumber")
+                self.BookObject?.saveInBackground()
+            }else{
+            
             }
         }
     }
@@ -199,6 +213,8 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
                 for var object in results {
                     object = object as! AVObject
                     object.deleteEventually()
+                    self.BookObject?.incrementKey("loveNumber", byAmount: NSNumber(int: -1))
+                    self.BookObject?.saveInBackground()
                 }
                 btn.setImage(UIImage(named: "heart"), forState: .Normal)
                 
@@ -209,6 +225,9 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
                 objet.saveInBackgroundWithBlock({ (success, error) -> Void in
                     if success{
                         btn.setImage(UIImage(named: "solidheart"), forState: .Normal)
+                        self.BookObject?.incrementKey("loveNumber", byAmount: NSNumber(int: 1))
+                        self.BookObject?.saveInBackground()
+
                     }else{
                         ProgressHUD.showError("操作失败")
                     }
@@ -224,8 +243,26 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
     func sharkAction(){
     
     }
-
     
+    //photoBrowser
+    
+    func photoBrowser(){
+        let photoBrowser = HZPhotoBrowser()
+        photoBrowser.imageCount = 1
+        photoBrowser.currentImageIndex = 0
+        photoBrowser.delegate = self
+        photoBrowser.show()
+        
+    }
+
+    func photoBrowser(browser: HZPhotoBrowser!, highQualityImageURLForIndex index: Int) -> NSURL! {
+        let coverFile = self.BookObject!["cover"] as? AVFile
+        return NSURL(string: (coverFile?.url)!)
+    }
+    
+    func photoBrowser(browser: HZPhotoBrowser!, placeholderImageForIndex index: Int) -> UIImage! {
+        return self.BookTitleView?.BookCover?.image
+    }
     
 
     /*

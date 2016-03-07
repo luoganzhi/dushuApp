@@ -130,7 +130,47 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
+        cell.hideUtilityButtonsAnimated(true)
         let indexPath = self.tableView?.indexPathForCell(cell)
+        let object = self.dataArrary[indexPath!.row] as? AVObject
+        if index == 0{
+            let vc = pushNewBookController()
+            GeneralFactory.addTitleWithTitle(vc, title1: "关闭", title2: "修改")
+            vc.BookObject = object
+            vc.fixType = "fix"
+            vc.fixBook()
+            self.presentViewController(vc, animated: true, completion: { () -> Void in
+                
+            })
+        }else{
+            ProgressHUD.show("")
+            
+            let discussQuery = AVQuery(className: "discuss")
+            discussQuery.whereKey("BookObject", equalTo: object)
+            discussQuery.findObjectsInBackgroundWithBlock({ (results, error) -> Void in
+                for Book in results{
+                    let BookObject = Book as? AVObject
+                    BookObject?.deleteInBackground()
+                }
+            })
+            
+            let loveQuery = AVQuery(className: "Love")
+            loveQuery.whereKey("BookObject", equalTo: object)
+            loveQuery.findObjectsInBackgroundWithBlock({ (results, error) -> Void in
+                for Book in results{
+                    let BookObject = Book as? AVObject
+                    BookObject?.deleteInBackground()
+                }
+            })
+            
+            object?.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                if success {
+                    ProgressHUD.showSuccess("删除成功")
+                    self.dataArrary.removeObjectAtIndex((indexPath?.row)!)
+                    self.tableView?.reloadData()
+                }
+            })
+        }
         
     }
 

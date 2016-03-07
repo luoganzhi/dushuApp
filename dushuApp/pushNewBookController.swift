@@ -25,6 +25,10 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     //定义一个接收description的变量
     var Book_Description = ""
     
+    //点击编辑按钮
+    var fixType: String?
+    var BookObject: AVObject?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +65,28 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         
     }
     
+    //编辑
+    func fixBook(){
+        if fixType == "fix"{
+            self.BookTitle?.BookName?.text = self.BookObject!["BookName"] as? String
+            self.BookTitle?.BookEditor?.text = self.BookObject!["BookEditor"] as? String
+            let coverFile = self.BookObject!["cover"] as? AVFile
+            coverFile?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                if data != nil{
+                self.BookTitle?.BookOver?.setImage(UIImage(data: data), forState: .Normal)
+                }
+            })
+            
+            self.Book_Title = (self.BookObject!["title"] as? String)!
+            self.type = (self.BookObject!["type"] as? String)!
+            self.detailType = (self.BookObject!["detailType"] as? String)!
+            self.score?.show_star = Int(self.BookObject!["score"] as! String)!
+            if self.Book_Description != ""{
+                self.titleArray.append("")
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,7 +105,13 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     func pushBookNotification(notification: NSNotification){
         let dict = notification.userInfo
         if String((dict!["success"])!) == "true"{
-            ProgressHUD.showSuccess("上传成功")
+            if self.fixType == "fix"{
+                ProgressHUD.showSuccess("修改成功")
+                
+            }else{
+                ProgressHUD.showSuccess("上传成功")
+
+            }
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 
             })
@@ -131,6 +163,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
     }
     
     func sure(){
+        
         ProgressHUD.show("")//优化上传显示
         let dict = [
             "BookName": (self.BookTitle?.BookName?.text)!,
@@ -142,7 +175,14 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
             "detailType": self.detailType,
             "description": self.Book_Description
             ]
-        pushBook.pushBookInBackground(dict)
+        if fixType == "fix"{
+            pushBook.pushBookInBackground(dict, obj: self.BookObject!)
+            
+            
+        }else{
+            let obj = AVObject(className: "Book")
+            pushBook.pushBookInBackground(dict, obj: obj)
+        }
     }
     
     //实现VPImageCropperDelegate代理
