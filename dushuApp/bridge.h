@@ -22,4 +22,6 @@
 
 #import "InputView.h"//评论的库
 
+#import "SWTableViewCell.h"//左划操作的库
+
 
