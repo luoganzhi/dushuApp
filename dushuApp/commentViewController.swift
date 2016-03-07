@@ -70,6 +70,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     //InputViewDelegate
     func publishButtonDidClick(button: UIButton!) {
+        
         ProgressHUD.show("")
         let object = AVObject(className: "discuss")
         object.setObject(self.input?.inputTextView?.text, forKey: "text")
@@ -123,6 +124,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     //实现上拉和下拉方法
     
     func headerRefresh(){
+        
         let query = AVQuery(className: "discuss")
         query.orderByDescending("createdAt")
         query.limit = 20
@@ -138,6 +140,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 self.dataArrary.removeAllObjects()
                 self.dataArrary.addObjectsFromArray(results)
                 self.tableview?.reloadData()
+                
                 
             }else{
                 
@@ -162,6 +165,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             if (results != nil) {
                 
                 self.dataArrary.addObjectsFromArray(results)
+                
                 self.tableview?.reloadData()
                 
             }else{
@@ -174,13 +178,25 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     //UITableViewDelegate,UITableViewDataSource
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = self.tableview?.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? discussCell
+        //解决cell重用显示重叠问题
+        if cell != nil{
+            for view in (cell?.contentView.subviews)!{
+                view.removeFromSuperview()
+            }
+        }
+        
+        
         cell?.initFrame()
+        
+        
         
         let object = self.dataArrary[indexPath.row] as? AVObject
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class pushBook_Cell: UITableViewCell {
+class pushBook_Cell: SWTableViewCell {
     
     var BookName : UILabel?
     var Editor : UILabel?

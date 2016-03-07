@@ -8,11 +8,12 @@
 
 import UIKit
 
-class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate {
 
     var dataArrary = NSMutableArray()
     var tableView : UITableView?
     var navigationView : UIView!
+    var swipeIndexPath: NSIndexPath?//记录cell的编辑状态
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,9 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView?.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? pushBook_Cell
         
+        cell?.rightUtilityButtons = self.returnRightButton()
+        cell?.delegate = self
+        
         let dict = self.dataArrary[indexPath.row] as? AVObject
         cell?.BookName?.text = (dict!["BookName"] as? String)! + (dict!["title"] as? String)!
         cell?.Editor?.text = "作者：" + (dict!["BookEditor"] as? String)!
@@ -96,6 +100,40 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return cell!
     }
+    
+    func returnRightButton()->[AnyObject]{
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 88, height: 88))
+        btn1.backgroundColor = UIColor.orangeColor()
+        btn1.setTitle("编辑", forState: .Normal)
+        
+        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 88, height: 88))
+        btn2.backgroundColor = UIColor.redColor()
+        btn2.setTitle("删除", forState: .Normal)
+        
+        return [btn1,btn2]
+    }
+    
+    //SWTableViewCellDelegate
+    
+    func swipeableTableViewCell(cell: SWTableViewCell!, scrollingToState state: SWCellState) {
+        let indexPath = self.tableView?.indexPathForCell(cell)
+        if state == .CellStateRight{
+            if swipeIndexPath != nil && swipeIndexPath?.row != indexPath?.row{
+                let swipeCell = self.tableView?.cellForRowAtIndexPath(self.swipeIndexPath!) as? pushBook_Cell
+                swipeCell?.hideUtilityButtonsAnimated(true)
+            }
+            self.swipeIndexPath = indexPath
+        }else if state == .CellStateCenter{
+            self.swipeIndexPath = nil
+        }
+        
+    }
+    
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
+        let indexPath = self.tableView?.indexPathForCell(cell)
+        
+    }
+
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView?.deselectRowAtIndexPath(indexPath, animated: true)

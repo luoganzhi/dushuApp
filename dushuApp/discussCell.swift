@@ -25,9 +25,9 @@ class discussCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        for view in self.contentView.subviews {
-            view.removeFromSuperview()
-        }
+//        for view in self.contentView.subviews {
+//            view.removeFromSuperview()
+//        }
         
         
     }
@@ -46,10 +46,17 @@ class discussCell: UITableViewCell {
         dateLabel?.font = UIFont(name: MY_FONT, size: 13)
         dateLabel?.textColor = UIColor.grayColor()
         self.contentView.addSubview(dateLabel!)
-        
+//        if detailLabel == nil{
         detailLabel = UILabel(frame: CGRect(x: 56, y: 30, width: SCREEN_WIDTH - 56 - 8, height: self.frame.height - 10 - 13 - 16))
         detailLabel?.font = UIFont(name: MY_FONT, size: 13)
         self.contentView.addSubview(detailLabel!)
+//        }else{
+//            self.removeFromSuperview()
+//            detailLabel = UILabel(frame: CGRect(x: 56, y: 30, width: SCREEN_WIDTH - 56 - 8, height: self.frame.height - 10 - 13 - 16))
+//            detailLabel?.font = UIFont(name: MY_FONT, size: 13)
+//            self.contentView.addSubview(detailLabel!)
+//            
+//        }
 
     }
     required init?(coder aDecoder: NSCoder) {

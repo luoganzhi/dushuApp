@@ -97,6 +97,12 @@
 		18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */; };
 		18C820551C8829C300B0C47A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820541C8829C300B0C47A /* BookDetailViewController.swift */; };
 		18C820571C882C2B00B0C47A /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820561C882C2B00B0C47A /* BookDetailView.swift */; };
+		18D5DD7C1C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD711C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m */; };
+		18D5DD7D1C8C768900E621FB /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD731C8C768900E621FB /* SWCellScrollView.m */; };
+		18D5DD7E1C8C768900E621FB /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD751C8C768900E621FB /* SWLongPressGestureRecognizer.m */; };
+		18D5DD7F1C8C768900E621FB /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD771C8C768900E621FB /* SWTableViewCell.m */; };
+		18D5DD801C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD791C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m */; };
+		18D5DD811C8C768900E621FB /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */; };
 		18E732F81C83D658007E204F /* btn_star_evaluation_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */; };
 		18E732F91C83D658007E204F /* btn_star_evaluation_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E732F51C83D658007E204F /* btn_star_evaluation_press.png */; };
 		18E732FA1C83D658007E204F /* LDXScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E732F71C83D658007E204F /* LDXScore.m */; };
@@ -282,6 +288,18 @@
 		18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		18C820541C8829C300B0C47A /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		18C820561C882C2B00B0C47A /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		18D5DD701C8C768900E621FB /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		18D5DD711C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		18D5DD721C8C768900E621FB /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
+		18D5DD731C8C768900E621FB /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellScrollView.m; sourceTree = "<group>"; };
+		18D5DD741C8C768900E621FB /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		18D5DD751C8C768900E621FB /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		18D5DD761C8C768900E621FB /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		18D5DD771C8C768900E621FB /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		18D5DD781C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		18D5DD791C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		18D5DD7A1C8C768900E621FB /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
+		18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		18E732F41C83D658007E204F /* btn_star_evaluation_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_normal.png; sourceTree = "<group>"; };
 		18E732F51C83D658007E204F /* btn_star_evaluation_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_star_evaluation_press.png; sourceTree = "<group>"; };
 		18E732F61C83D658007E204F /* LDXScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDXScore.h; sourceTree = "<group>"; };
@@ -699,6 +717,7 @@
 		18A250D61C81CD0800DFC2F6 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				18D5DD6F1C8C768900E621FB /* LeftSwipeCell */,
 				180AA2D91C89CEF200DA3C2D /* InputView */,
 				18A7FA9B1C88074C00E4E483 /* SDWebImage */,
 				1879D0581C85825C0034C30D /* MJRefresh */,
@@ -820,6 +839,25 @@
 				18E90D771C8AD33700568119 /* commentViewController.swift */,
 			);
 			name = C;
+			sourceTree = "<group>";
+		};
+		18D5DD6F1C8C768900E621FB /* LeftSwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				18D5DD701C8C768900E621FB /* NSMutableArray+SWUtilityButtons.h */,
+				18D5DD711C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m */,
+				18D5DD721C8C768900E621FB /* SWCellScrollView.h */,
+				18D5DD731C8C768900E621FB /* SWCellScrollView.m */,
+				18D5DD741C8C768900E621FB /* SWLongPressGestureRecognizer.h */,
+				18D5DD751C8C768900E621FB /* SWLongPressGestureRecognizer.m */,
+				18D5DD761C8C768900E621FB /* SWTableViewCell.h */,
+				18D5DD771C8C768900E621FB /* SWTableViewCell.m */,
+				18D5DD781C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.h */,
+				18D5DD791C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m */,
+				18D5DD7A1C8C768900E621FB /* SWUtilityButtonView.h */,
+				18D5DD7B1C8C768900E621FB /* SWUtilityButtonView.m */,
+			);
+			path = LeftSwipeCell;
 			sourceTree = "<group>";
 		};
 		18E732F31C83D658007E204F /* LDXScore */ = {
@@ -1050,6 +1088,7 @@
 				1879D0871C85825C0034C30D /* MJRefreshComponent.m in Sources */,
 				1879D0881C85825C0034C30D /* MJRefreshFooter.m in Sources */,
 				18A7FAC81C88074C00E4E483 /* UIImage+MultiFormat.m in Sources */,
+				18D5DD811C8C768900E621FB /* SWUtilityButtonView.m in Sources */,
 				18A250D31C81B59A00DFC2F6 /* GeneralFactory.swift in Sources */,
 				18A7FAC91C88074C00E4E483 /* UIImage+WebP.m in Sources */,
 				18A7FAC11C88074C00E4E483 /* SDWebImageDecoder.m in Sources */,
@@ -1058,18 +1097,22 @@
 				18A250DE1C81CDBA00DFC2F6 /* JVFloatLabeledTextField.m in Sources */,
 				18A250D51C81CC9C00DFC2F6 /* BookTitleView.swift in Sources */,
 				18A7FABE1C88074C00E4E483 /* NSData+ImageContentType.m in Sources */,
+				18D5DD7F1C8C768900E621FB /* SWTableViewCell.m in Sources */,
 				18A24FE41C8186F000DFC2F6 /* pushViewController.swift in Sources */,
 				18E733261C84159E007E204F /* IGLDropDownMenu.m in Sources */,
 				1879D0961C85825C0034C30D /* UIScrollView+MJRefresh.m in Sources */,
 				18A7FACA1C88074C00E4E483 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1879D0951C85825C0034C30D /* UIScrollView+MJExtension.m in Sources */,
+				18D5DD7D1C8C768900E621FB /* SWCellScrollView.m in Sources */,
 				1879D0901C85825C0034C30D /* MJRefreshGifHeader.m in Sources */,
 				180AA2DF1C89CEF200DA3C2D /* InputView.m in Sources */,
+				18D5DD7E1C8C768900E621FB /* SWLongPressGestureRecognizer.m in Sources */,
 				18448D571C82D5AA004BD5A0 /* VPImageCropperViewController.m in Sources */,
 				1879D0921C85825C0034C30D /* MJRefreshStateHeader.m in Sources */,
 				18A7FAC21C88074C00E4E483 /* SDWebImageDownloader.m in Sources */,
 				18A7FAC61C88074C00E4E483 /* UIButton+WebCache.m in Sources */,
 				1837CA461C82F26B000C68F6 /* Push_DescriptionController.swift in Sources */,
+				18D5DD801C8C768900E621FB /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				1879D08E1C85825C0034C30D /* MJRefreshBackNormalFooter.m in Sources */,
 				18A250E01C81CDBA00DFC2F6 /* NSString+TextDirectionality.m in Sources */,
 				18E733251C84159E007E204F /* IGLDropDownItem.m in Sources */,
@@ -1109,6 +1152,7 @@
 				18A7FABD1C88074C00E4E483 /* MKAnnotationView+WebCache.m in Sources */,
 				18A24F9B1C81813000DFC2F6 /* AppDelegate.swift in Sources */,
 				18A250D01C81B45800DFC2F6 /* pushNewBookController.swift in Sources */,
+				18D5DD7C1C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				18A7FAC71C88074C00E4E483 /* UIImage+GIF.m in Sources */,
 				18A7FA9A1C874C2D00E4E483 /* pushBook_Cell.swift in Sources */,
 				1879D0861C85825C0034C30D /* MJRefreshBackFooter.m in Sources */,
