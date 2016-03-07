@@ -241,7 +241,48 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
         
     }
     func sharkAction(){
-    
+        let shareParames = NSMutableDictionary()
+        
+        shareParames.SSDKSetupShareParamsByText("分享内容", images: self.BookTitleView?.BookCover?.image, url: NSURL(string: "http://www.baidu.com"), title: "baidu", type: SSDKContentType.Image)
+//        ShareSDK.share(SSDKPlatformType.TypeWechat, parameters: shareParames) { (state : SSDKResponseState, userData : [NSObject : AnyObject]!, contentEntity :SSDKContentEntity!, error : NSError!) -> Void in
+//
+//            switch state{
+//                
+//            case SSDKResponseState.Success:
+//                ProgressHUD.showSuccess("分享成功")
+//                break
+//              
+//            case SSDKResponseState.Fail:
+//                ProgressHUD.showError("分享失败")
+//                break
+//            case SSDKResponseState.Cancel:
+//                ProgressHUD.showError("已取消分享")
+//                break
+//                
+//            default:
+//                break
+//            }
+        
+//        }
+        ShareSDK.showShareActionSheet(self.view, items: [1,2,5,6,7], shareParams: shareParames) { (state, plaform, userdata, contentEntity, error, success) -> Void in
+            switch state{
+                
+            case SSDKResponseState.Success:
+                ProgressHUD.showSuccess("分享成功")
+                break
+                
+            case SSDKResponseState.Fail:
+                ProgressHUD.showError("分享失败")
+                break
+            case SSDKResponseState.Cancel:
+                ProgressHUD.showError("已取消分享")
+                break
+                
+            default:
+                break
+            }
+
+        }
     }
     
     //photoBrowser
@@ -254,7 +295,7 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
         photoBrowser.show()
         
     }
-
+    
     func photoBrowser(browser: HZPhotoBrowser!, highQualityImageURLForIndex index: Int) -> NSURL! {
         let coverFile = self.BookObject!["cover"] as? AVFile
         return NSURL(string: (coverFile?.url)!)

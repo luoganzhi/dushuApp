@@ -16,6 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        //设置shareSdk
+        ShareSDK.registerApp("101ffd5f8dfac", activePlatforms: [SSDKPlatformType.TypeWechat.rawValue,SSDKPlatformType.TypeSinaWeibo.rawValue,SSDKPlatformType.TypeQQ.rawValue,SSDKPlatformType.TypeWhatsApp.rawValue], onImport: { (platform) -> Void in
+            switch platform{
+                
+            case SSDKPlatformType.TypeWechat:
+                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                
+            case SSDKPlatformType.TypeQQ:
+                ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+
+            default:
+                break
+            }
+        }) { (platform, appInfo) -> Void in
+            switch platform{
+                case SSDKPlatformType.TypeWechat:
+            //设置微信应用信息,由于没有注册.所以随便填写了一个
+                    appInfo.SSDKSetupWeChatByAppId("wx4868b35061f87885", appSecret: "64020361b8ec4c99936c0e3999a9f249")
+                break
+            default:
+                break
+            
+            }
+        }
+        
         //设置leanCloud
         AVOSCloud.setApplicationId("1hyjRmJ1sFx8WxvKQkAHcxnG-gzGzoHsz", clientKey: "T0JnGAqSLgzRfUFFgUvxebLk")
         

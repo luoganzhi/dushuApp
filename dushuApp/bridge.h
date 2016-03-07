@@ -26,4 +26,13 @@
 
 #import "HZPhotoBrowser.h"//图片预览
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+
+#import "WXApi.h"
+
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+
 
