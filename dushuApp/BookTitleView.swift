@@ -61,7 +61,7 @@ class BookTitleView: UIView {
     
     
     func chioceCover(){
-        self.delegate?.chioceCover!()
+        self.delegate?.chioceCover?()
         
     }
 }

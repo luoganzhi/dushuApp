@@ -50,11 +50,19 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
     }
     
     
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    deinit{
+        print("BookDetailViewController没有发生内存泄露")
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     
     //查询是否已经点赞
     
