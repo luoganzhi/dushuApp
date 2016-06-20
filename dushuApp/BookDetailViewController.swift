@@ -184,7 +184,7 @@ class BookDetailViewController: UIViewController ,BookTabBarDelegate,InputViewDe
             layView = UIView(frame: self.view.frame)
             layView?.backgroundColor = UIColor.grayColor()
             layView?.alpha = 0
-            let tap = UITapGestureRecognizer(target: self, action: Selector("tapInputView"))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(BookDetailViewController.tapInputView))
             layView?.addGestureRecognizer(tap)
         }
         self.view.insertSubview(self.layView!, belowSubview: self.input!)

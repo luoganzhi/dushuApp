@@ -61,7 +61,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
         self.score?.max_star = 5
         self.score?.show_score = 5
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("pushBookNotification:"), name: "pushBookNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(pushNewBookController.pushBookNotification(_:)), name: "pushBookNotification", object: nil)
         
     }
     
@@ -194,7 +194,7 @@ class pushNewBookController: UIViewController,BookTitleDelegate ,PhotoPickerDele
 
     func imageCropper(cropperViewController: VPImageCropperViewController!, didFinished editedImage: UIImage!) {
         self.BookTitle?.BookOver?.setImage(editedImage, forState: .Normal)
-        cropperViewController.dismissViewControllerAnimated(true) { () -> Void in
+        cropperViewController.dismissViewControllerAnimated(true){() -> Void in
             
         }
     }

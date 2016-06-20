@@ -15,14 +15,17 @@ class rankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //AVUser.logOut()//登出
+        AVUser.logOut()//登出
         if LOGIN_KEY == true{
             if AVUser.currentUser() == nil{             //判断是否登陆了
                 let story = UIStoryboard(name: "Login", bundle: nil)
                 let stortvc = story.instantiateViewControllerWithIdentifier("Login")
             
                 self.presentViewController(stortvc, animated: true) { () -> Void in
-                
+                    
+                    
+                    
+                                    
                 }
             }
         }

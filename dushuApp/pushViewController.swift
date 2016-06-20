@@ -13,7 +13,7 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var dataArrary = NSMutableArray()
     var tableView : UITableView?
     var navigationView : UIView!
-    var swipeIndexPath: NSIndexPath?//记录cell的编辑状态
+    var swipeIndexPath: NSIndexPath? // 记录cell的编辑状态
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,13 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.registerClass(pushBook_Cell.classForCoder(), forCellReuseIdentifier: "cell")
-        //tableView?.tableFooterView = UIView()
-        tableView?.separatorStyle = .None//去除Cell的线条
+        // tableView?.tableFooterView = UIView()
+        tableView?.separatorStyle = .None // 去除Cell的线条
         self.view.addSubview(tableView!)
         
         
-        tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: Selector("headerRefresh"))
-        tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "footerRefresh")
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(pushViewController.headerRefresh))
+        tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(pushViewController.footerRefresh))
         tableView?.mj_header.beginRefreshing()
         // Do any additional setup after loading the view.
     }
@@ -51,7 +51,7 @@ class pushViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         addBookBtn.setTitle("     新建书评", forState: .Normal)
         addBookBtn.titleLabel?.font = UIFont(name: MY_FONT, size: 15)
         addBookBtn.contentHorizontalAlignment = .Left    //调整字体位置
-        addBookBtn.addTarget(self, action: Selector("pushNewBook"), forControlEvents: UIControlEvents.TouchUpInside)
+        addBookBtn.addTarget(self, action: #selector(pushViewController.pushNewBook), forControlEvents: UIControlEvents.TouchUpInside)
         navigationView.addSubview(addBookBtn)
         
         

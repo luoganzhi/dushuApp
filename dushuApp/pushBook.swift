@@ -32,7 +32,7 @@ class pushBook: NSObject {
             
             if success{
                 obj.setObject(coverFile, forKey: "cover")
-                print("hah")
+//                print("hah")
                 obj.saveInBackgroundWithBlock({ (success, error) -> Void in
                     if success{
                         NSNotificationCenter.defaultCenter().postNotificationName("pushBookNotification", object: nil, userInfo: ["success": "true"])

@@ -29,9 +29,9 @@ class GeneralFactory: NSObject {
         but2.tag = 1235
         target.view.addSubview(but2)
         
+        
         but1.addTarget(target, action: Selector("close"), forControlEvents: .TouchUpInside)
         but2.addTarget(target, action: Selector("sure"), forControlEvents: .TouchUpInside)
-        
         
         
     }

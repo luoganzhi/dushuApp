@@ -46,7 +46,7 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.layView = UIView(frame: self.view.frame)
         self.layView?.backgroundColor = UIColor.grayColor()
         self.layView?.alpha = 0
-        let tap = UITapGestureRecognizer(target: self, action: Selector("tapLayView"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(commentViewController.tapLayView))
         self.layView?.addGestureRecognizer(tap)
         self.view.insertSubview(self.layView!, belowSubview: self.input!)
        
@@ -54,8 +54,8 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         
         
-        self.tableview?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
-        self.tableview?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "footerRefresh")
+        self.tableview?.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(commentViewController.headerRefresh))
+        self.tableview?.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(commentViewController.footerRefresh))
          self.tableview?.mj_header.beginRefreshing()
         
         // Do any additional setup after loading the view.
@@ -238,7 +238,8 @@ class commentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         }
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

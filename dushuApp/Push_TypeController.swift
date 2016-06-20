@@ -197,8 +197,8 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
         self.segmentControll2?.initButtonWithTitleandImage(buttonArray2)
         self.view.addSubview(segmentControll2!)
 
-        self.segmentControll1?.addTarget(self, action: Selector("segementControllerAction:"), forControlEvents: .ValueChanged)
-        self.segmentControll2?.addTarget(self, action: Selector("segementControllerAction:"), forControlEvents: .ValueChanged)
+        self.segmentControll1?.addTarget(self, action: #selector(Push_TypeController.segementControllerAction(_:)), forControlEvents: .ValueChanged)
+        self.segmentControll2?.addTarget(self, action: #selector(Push_TypeController.segementControllerAction(_:)), forControlEvents: .ValueChanged)
     }
     
     
@@ -259,7 +259,7 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
     func creatDropDownMenu(array1: Array<NSDictionary>,array2: Array<NSDictionary>){
         print("here")
         let dropDownItem1 = NSMutableArray()
-        for var i = 0; i < array1.count; i++ {
+        for i in 0 ..< array1.count {
             let dict = array1[i]
             let item = IGLDropDownItem()
             item.text = dict["title"] as? String
@@ -268,7 +268,7 @@ class Push_TypeController: UIViewController,IGLDropDownMenuDelegate {
         
         
         let dropDownItem2 = NSMutableArray()
-        for var i = 0; i < array2.count; i++ {
+        for i in 0 ..< array2.count {
             let dict = array2[i]
             let item = IGLDropDownItem()
             item.text = dict["title"] as? String

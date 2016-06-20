@@ -34,7 +34,7 @@ class BookTitleView: UIView {
         self.BookOver = UIButton(frame: CGRectMake(8,0,110,141))//封面比例110，141
         self.BookOver?.setImage(UIImage(named: "Cover"), forState: .Normal)
         self.addSubview(self.BookOver!)
-        self.BookOver?.addTarget(self, action: Selector("chioceCover"), forControlEvents: .TouchUpInside)
+        self.BookOver?.addTarget(self, action: #selector(BookTitleDelegate.chioceCover), forControlEvents: .TouchUpInside)
         
         self.BookName = JVFloatLabeledTextField(frame: CGRectMake(128,8+40,SCREEN_WIDTH-128-15,30))
         self.BookEditor = JVFloatLabeledTextField(frame: CGRectMake(128,8+40+30+30,SCREEN_WIDTH-128-15,30))

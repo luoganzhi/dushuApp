@@ -97,6 +97,7 @@
 		18A7FACC1C88074C00E4E483 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */; };
 		18C820551C8829C300B0C47A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820541C8829C300B0C47A /* BookDetailViewController.swift */; };
 		18C820571C882C2B00B0C47A /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C820561C882C2B00B0C47A /* BookDetailView.swift */; };
+		18D11A571C906B0C00C72360 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D11A561C906B0C00C72360 /* Images.xcassets */; };
 		18D5DD7C1C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD711C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m */; };
 		18D5DD7D1C8C768900E621FB /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD731C8C768900E621FB /* SWCellScrollView.m */; };
 		18D5DD7E1C8C768900E621FB /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5DD751C8C768900E621FB /* SWLongPressGestureRecognizer.m */; };
@@ -313,6 +314,7 @@
 		18A7FABC1C88074C00E4E483 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		18C820541C8829C300B0C47A /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		18C820561C882C2B00B0C47A /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		18D11A561C906B0C00C72360 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18D5DD701C8C768900E621FB /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		18D5DD711C8C768900E621FB /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		18D5DD721C8C768900E621FB /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 				18A24FA61C81813000DFC2F6 /* Info.plist */,
 				18A24FD51C81843A00DFC2F6 /* bridge.h */,
 				18A24FD61C81850400DFC2F6 /* config.swift */,
+				18D11A561C906B0C00C72360 /* Images.xcassets */,
 			);
 			path = dushuApp;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 				TargetAttributes = {
 					18A24F961C81813000DFC2F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 57YXPBC398;
 					};
 					18A24FAA1C81813000DFC2F6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1254,6 +1258,7 @@
 				18A250C41C81981C00DFC2F6 /* 隶变体.ttf in Resources */,
 				18A24FA51C81813000DFC2F6 /* LaunchScreen.storyboard in Resources */,
 				18A250F61C81CF2900DFC2F6 /* logn.png in Resources */,
+				18D11A571C906B0C00C72360 /* Images.xcassets in Resources */,
 				18A250F31C81CF2900DFC2F6 /* ear1.png in Resources */,
 				18A24FA21C81813000DFC2F6 /* Assets.xcassets in Resources */,
 				18E733181C840117007E204F /* segmented-separator.png in Resources */,
@@ -1494,7 +1499,8 @@
 		18A24FC01C81813000DFC2F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/release-v3.2.5.1/Static",
@@ -1519,6 +1525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = luoganzhi.com.dushuApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = dushuApp/bridge.h;
 			};
 			name = Debug;
@@ -1526,7 +1533,8 @@
 		18A24FC11C81813000DFC2F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/release-v3.2.5.1/Static",
@@ -1551,6 +1559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = luoganzhi.com.dushuApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = dushuApp/bridge.h;
 			};
 			name = Release;

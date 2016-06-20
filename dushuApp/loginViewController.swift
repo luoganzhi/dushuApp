@@ -53,6 +53,10 @@ class loginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     //注册键盘出现和消失
     
     func keyboardWillShowNotification(notification:NSNotification){

@@ -25,12 +25,12 @@ class BookTabBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
             
-        for var i = 0; i < 4; i++ {
+        for i in 0 ..< 4 {
             let btn = UIButton(frame: CGRect(x: (frame.width / 4) * CGFloat(i), y: 0, width: frame.width / 4, height: frame.height))
             btn.setImage(UIImage(named: barNmae[i]), forState: .Normal)
             self.backgroundColor = UIColor.whiteColor()
             btn.tag = i
-            btn.addTarget(self, action: Selector("BookTabBarAction:"), forControlEvents: .TouchUpInside)
+            btn.addTarget(self, action: #selector(BookTabBar.BookTabBarAction(_:)), forControlEvents: .TouchUpInside)
             
             self.addSubview(btn)
         }
@@ -45,7 +45,7 @@ class BookTabBar: UIView {
         let context = UIGraphicsGetCurrentContext()
         CGContextSetRGBStrokeColor(context, 213 / 255, 213 / 255, 213 / 255, 1)
         CGContextSetLineWidth(context, 0.5)
-        for var i = 1; i < 4;i++ {
+        for i in 1 ..< 4 {
             CGContextMoveToPoint(context, rect.width / 4 * CGFloat(i), 0)
             CGContextAddLineToPoint(context, rect.width / 4 * CGFloat(i), rect.height)
         }
@@ -57,16 +57,16 @@ class BookTabBar: UIView {
     func BookTabBarAction(btn: UIButton){
         switch(btn.tag){
         case 0:
-            delegate?.comment()
+            self.delegate?.comment()
             break
         case 1:
-            delegate?.commentControl()
+            self.delegate?.commentControl()
             break
         case 2:
-            delegate?.likeBook(btn)
+            self.delegate?.likeBook(btn)
             break
         case 3:
-            delegate?.sharkAction()
+            self.delegate?.sharkAction()
             break
         default:
             break
